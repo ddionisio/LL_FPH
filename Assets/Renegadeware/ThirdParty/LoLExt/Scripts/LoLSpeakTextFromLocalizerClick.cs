@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class LoLSpeakTextFromLocalizerClick : LoLSpeakTextFromLocalizer, IPointerClickHandler {
-    public GameObject hideOnClick;
+namespace LoLExt {
+    public class LoLSpeakTextFromLocalizerClick : LoLSpeakTextFromLocalizer, IPointerClickHandler {
+        public GameObject hideOnClick;
 
-    void IPointerClickHandler.OnPointerClick(PointerEventData eventData) {
-        Play();
+        void IPointerClickHandler.OnPointerClick(PointerEventData eventData) {
+            Play();
 
-        if(hideOnClick)
-            hideOnClick.SetActive(false);
+            if(hideOnClick)
+                hideOnClick.SetActive(false);
+        }
     }
 }

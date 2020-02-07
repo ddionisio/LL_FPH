@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(CameraShakeControl))]
-public class CameraShakeControlEditor : Editor {
-    public override void OnInspectorGUI() {
-        base.OnInspectorGUI();
+namespace LoLExt {
+    [CustomEditor(typeof(CameraShakeControl))]
+    public class CameraShakeControlEditor : Editor {
+        public override void OnInspectorGUI() {
+            base.OnInspectorGUI();
 
-        if(GUILayout.Button("Preview")) {
-            ((CameraShakeControl)target).Shake();
+            if(GUILayout.Button("Preview")) {
+                ((CameraShakeControl)target).Shake();
+            }
         }
     }
 }

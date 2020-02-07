@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using LoLExt;
+
 namespace HutongGames.PlayMaker.Actions.LoL {
     [ActionCategory("Legends of Learning")]
     [Tooltip("Set current score. Make sure to call either: (ApplyCurrentProgress, IncrementProgress, SetProgress) to push it to LoL service.")]

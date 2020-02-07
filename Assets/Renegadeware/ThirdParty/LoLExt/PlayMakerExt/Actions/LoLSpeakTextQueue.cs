@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using LoLExt;
+
 namespace HutongGames.PlayMaker.Actions.LoL {
     [ActionCategory("Legends of Learning")]
     [Tooltip("Queue up textRefs to be played based on group. Group will replace current queues if it is different. Ensure textRef is either from: Localize, StringRef")]

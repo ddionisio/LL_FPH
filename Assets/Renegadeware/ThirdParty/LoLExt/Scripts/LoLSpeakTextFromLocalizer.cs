@@ -2,32 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoLSpeakTextFromLocalizer : MonoBehaviour {
+namespace LoLExt {
+    public class LoLSpeakTextFromLocalizer : MonoBehaviour {
 
-    M8.UI.Texts.Localizer localizer;
+        M8.UI.Texts.Localizer localizer;
 
-    public string playGroup = "default";
-    public int playIndex = -1;
+        public string playGroup = "default";
+        public int playIndex = -1;
 
-    public bool autoPlay;
-    
-    public void Play() {
-        if(string.IsNullOrEmpty(localizer.key))
-            return;
+        public bool autoPlay;
 
-        if(string.IsNullOrEmpty(playGroup))
-            LoLManager.instance.SpeakText(localizer.key);
-        else
-            LoLManager.instance.SpeakTextQueue(localizer.key, playGroup, playIndex);
-    }
+        public void Play() {
+            if(string.IsNullOrEmpty(localizer.key))
+                return;
 
-    void OnEnable() {
-        if(autoPlay)
-            Play();
-    }
+            if(string.IsNullOrEmpty(playGroup))
+                LoLManager.instance.SpeakText(localizer.key);
+            else
+                LoLManager.instance.SpeakTextQueue(localizer.key, playGroup, playIndex);
+        }
 
-    void Awake() {
-        if(!localizer)
-            localizer = GetComponent<M8.UI.Texts.Localizer>();
+        void OnEnable() {
+            if(autoPlay)
+                Play();
+        }
+
+        void Awake() {
+            if(!localizer)
+                localizer = GetComponent<M8.UI.Texts.Localizer>();
+        }
     }
 }

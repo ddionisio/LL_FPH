@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using LoLExt;
+
 namespace HutongGames.PlayMaker.Actions.LoL {
     [ActionCategory("Legends of Learning")]
     public class LoLApplyCurrentProgress : FsmStateAction {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using M8;
+using LoLExt;
 
 namespace HutongGames.PlayMaker.Actions.LoL {
     [ActionCategory("Legends of Learning")]

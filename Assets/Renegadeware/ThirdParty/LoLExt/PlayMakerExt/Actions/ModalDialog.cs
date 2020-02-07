@@ -22,7 +22,7 @@ namespace HutongGames.PlayMaker.Actions.LoL {
         private bool mIsNext;
 
         public override void Reset() {
-            modal = ModalDialog.modalNameGeneric;
+            modal = LoLExt.ModalDialog.modalNameGeneric;
             portrait = null;
             usePortrait = false;
             nameText = null;
@@ -68,9 +68,9 @@ namespace HutongGames.PlayMaker.Actions.LoL {
                 }
 
                 if(usePortrait.Value)
-                    ModalDialog.OpenApplyPortrait(modal.Value, portrait.Value as Sprite, nameText.GetStringRef(), textRef, OnDialogNext);
+                    LoLExt.ModalDialog.OpenApplyPortrait(modal.Value, portrait.Value as Sprite, nameText.GetStringRef(), textRef, OnDialogNext);
                 else
-                    ModalDialog.Open(modal.Value, nameText.GetStringRef(), textRef, OnDialogNext);
+                    LoLExt.ModalDialog.Open(modal.Value, nameText.GetStringRef(), textRef, OnDialogNext);
 
                 mIsNext = false;
             }
