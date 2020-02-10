@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Renegadeware/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Renegadeware/Scenes/_Init.unity
+    guid: b4d491c4c2f89864eafc66b14af2bc46
+  - enabled: 1
+    path: Assets/Renegadeware/Scenes/start.unity
+    guid: b9d9bfee07c2f0946883997f72220b9c
   m_configObjects: {}
