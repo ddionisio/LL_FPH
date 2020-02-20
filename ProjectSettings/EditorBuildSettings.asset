@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Renegadeware/Scenes/start.unity
     guid: b9d9bfee07c2f0946883997f72220b9c
+  - enabled: 1
+    path: Assets/Renegadeware/Scenes/main.unity
+    guid: 01db6da5b4df681488e6ef1155b33e23
   m_configObjects: {}
