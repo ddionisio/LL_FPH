@@ -44,10 +44,11 @@ SpriteAtlas:
     packables:
     - {fileID: 102900000, guid: 4cf1d0dfea113d5498f55e7cf68331e9, type: 3}
     - {fileID: 102900000, guid: 4705e51feb4fac04c84290f5c5a3720d, type: 3}
-    totalSpriteSurfaceArea: 23833
+    totalSpriteSurfaceArea: 42233
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: afb95580ee3e0d34f9c3feb8f70214a2, type: 3}
   - {fileID: 21300000, guid: f4683e31b11d8c249ac19e37611319cd, type: 3}
   - {fileID: 21300000, guid: 1bb0cc5141a073b4aa089346df8cd0a3, type: 3}
   - {fileID: 21300002, guid: 2c182d91a96c3c949bcbade9ea5d4ba4, type: 3}
@@ -79,7 +80,9 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 36ce24ec9ae04524289ce0e80bf270be, type: 3}
   - {fileID: 21300000, guid: c5a54a7e88b59e547a8905c1ad93d892, type: 3}
   - {fileID: 21300000, guid: d100bf3fba8e48343b4f69fe5447d682, type: 3}
+  - {fileID: 21300000, guid: 49d782ef45be5004b9edb429ea0994ce, type: 3}
   m_PackedSpriteNamesToIndex:
+  - speakIcon
   - downArrow
   - triangle
   - tutorialArrow2_bottom
@@ -111,5 +114,6 @@ SpriteAtlas:
   - circleGlowTiny
   - edge_shade
   - tutorialHandPoint
+  - circle64x64
   m_Tag: main
   m_IsVariant: 0
