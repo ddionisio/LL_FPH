@@ -10,6 +10,7 @@ namespace LoLExt {
         public const string parmTitleTextRef = "t";
         public const string parmDescTextRef = "d";
         public const string parmChoices = "c"; //array of ModalChoiceItemInfo
+        public const string parmStartSelect = "i";
         public const string parmNextCallback = "n";
 
         [Header("Display")]        
@@ -24,7 +25,6 @@ namespace LoLExt {
         public GameObject confirmReadyGO; //if a choice has been made, activate this
 
         [Header("Text Speech")]
-        public string textSpeechGroup;
         public bool textSpeechAuto;
 
         private M8.CacheList<ModalChoiceItem> mItemActives = new M8.CacheList<ModalChoiceItem>(choiceCapacity);
@@ -37,20 +37,23 @@ namespace LoLExt {
         private System.Action<int> mNextCallback;
 
         public void PlayDialogSpeech() {
+            var grpName = name;
             int ind = 0;
 
+            LoLManager.instance.StopSpeakQueue();
+
             if(!string.IsNullOrEmpty(mTitleTextRef)) {
-                LoLManager.instance.SpeakTextQueue(mTitleTextRef, textSpeechGroup, ind);
+                LoLManager.instance.SpeakTextQueue(mTitleTextRef, grpName, ind);
                 ind++;
             }
 
             if(!string.IsNullOrEmpty(mDescTextRef)) {
-                LoLManager.instance.SpeakTextQueue(mDescTextRef, textSpeechGroup, ind);
+                LoLManager.instance.SpeakTextQueue(mDescTextRef, grpName, ind);
                 ind++;
             }
 
             for(int i = 0; i < mItemActives.Count; i++) {
-                LoLManager.instance.SpeakTextQueue(mItemActives[i].textRef, textSpeechGroup, ind + i);
+                LoLManager.instance.SpeakTextQueue(mItemActives[i].textRef, grpName, ind + i);
             }
         }
 
@@ -58,15 +61,32 @@ namespace LoLExt {
             if(aActive) {
                 if(textSpeechAuto)
                     PlayDialogSpeech();
+
+                if(confirmReadyGO)
+                    confirmReadyGO.SetActive(mCurChoiceIndex != -1);
+
+                if(confirmButton)
+                    confirmButton.interactable = mCurChoiceIndex != -1;
             }
             else {
+                if(confirmReadyGO)
+                    confirmReadyGO.SetActive(false);
+
                 if(confirmButton)
                     confirmButton.interactable = false;
             }
 
+            //apply selected
             //enable/disable choice interactions
             for(int i = 0; i < mItemActives.Count; i++) {
-                mItemActives[i].interactable = aActive;
+                if(aActive) {
+                    mItemActives[i].selected = mCurChoiceIndex == i;
+                    mItemActives[i].interactable = true;
+                }
+                else {
+                    mItemActives[i].selected = false;
+                    mItemActives[i].interactable = true;
+                }
             }
         }
                 
@@ -85,6 +105,8 @@ namespace LoLExt {
 
             parms.TryGetValue(parmNextCallback, out mNextCallback);
 
+            mCurChoiceIndex = parms.ContainsKey(parmStartSelect) ? parms.GetValue<int>(parmStartSelect) : -1;
+
             //setup display
             titleLabel.text = !string.IsNullOrEmpty(mTitleTextRef) ? M8.Localize.Get(mTitleTextRef) : "";
 
@@ -94,9 +116,7 @@ namespace LoLExt {
             ClearChoices();
             if(infos != null)
                 GenerateChoices(infos);
-
-            mCurChoiceIndex = -1;
-
+                        
             //setup confirm
             if(confirmButton)
                 confirmButton.interactable = false;
@@ -118,23 +138,35 @@ namespace LoLExt {
         }
 
         void OnChoiceClick(int index) {
-            var prevChoiceIndex = mCurChoiceIndex;
-            mCurChoiceIndex = index;
+            //update selection
+            if(mCurChoiceIndex != index) {
+                var prevChoiceIndex = mCurChoiceIndex;
+                mCurChoiceIndex = index;
 
-            if(prevChoiceIndex != -1)
-                mItemActives[prevChoiceIndex].selected = false;
+                if(prevChoiceIndex != -1)
+                    mItemActives[prevChoiceIndex].selected = false;
 
-            mItemActives[mCurChoiceIndex].selected = true;
+                mItemActives[mCurChoiceIndex].selected = true;
 
+                if(confirmButton && prevChoiceIndex == -1)
+                    confirmButton.interactable = true;
+            }
+
+            //update confirm
             if(confirmReadyGO)
                 confirmReadyGO.SetActive(true);
 
-            if(!confirmButton) { //call next if no confirm
-                mNextCallback?.Invoke(mCurChoiceIndex);
-            }
+            if(!confirmButton) //call next if no confirm
+                OnConfirmClick();
         }
 
         void OnConfirmClick() {
+            if(confirmReadyGO)
+                confirmReadyGO.SetActive(false);
+
+            if(confirmButton)
+                confirmButton.interactable = false;
+
             if(mCurChoiceIndex != -1)
                 mNextCallback?.Invoke(mCurChoiceIndex);
         }
@@ -157,6 +189,7 @@ namespace LoLExt {
                     }
 
                     itm.Setup(i, infos[i]);
+                    itm.selected = false;
                     itm.interactable = false;
                     itm.gameObject.SetActive(true);
                 }

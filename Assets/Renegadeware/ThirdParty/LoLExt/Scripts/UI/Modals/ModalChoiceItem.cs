@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 namespace LoLExt {
     [System.Serializable]
-    public struct ModalChoiceItemInfo {
+    public class ModalChoiceItemInfo {
         public Sprite iconRef;
         public string textRef;
     }
@@ -15,17 +15,16 @@ namespace LoLExt {
         [Header("Display")]
         public Image iconImage;
         public Text label;
-        public Selectable interaction;
         public GameObject selectedGO;
 
         public event System.Action<int> clickCallback;
 
         public int index { get; private set; }        
         public bool interactable { 
-            get { return interaction ? interaction.interactable : false; } 
+            get { return selectable ? selectable.interactable : false; } 
             set {
-                if(interaction)
-                    interaction.interactable = value;
+                if(selectable)
+                    selectable.interactable = value;
             }
         }
 
@@ -39,6 +38,16 @@ namespace LoLExt {
 
         public string textRef { get; private set; }
 
+        public Selectable selectable {
+            get {
+                if(!mSelectable)
+                    mSelectable = GetComponent<Selectable>();
+                return mSelectable;
+            }
+        }
+
+        private Selectable mSelectable;
+
         public void Setup(int index, ModalChoiceItemInfo info) {
             this.index = index;
 
@@ -49,8 +58,6 @@ namespace LoLExt {
 
             if(label)
                 label.text = M8.Localize.Get(textRef);
-
-            selected = false;
         }
         
         void IPointerClickHandler.OnPointerClick(PointerEventData eventData) {
