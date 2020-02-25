@@ -10,6 +10,8 @@
     "options": "OPTIONS",
     "music": "MUSIC",
     "sound": "SOUND",
-    "close": "CLOSE"
+    "close": "CLOSE",
+    "intro_1": "intro 1",
+    "intro_2": "intro 2"
   }
 }

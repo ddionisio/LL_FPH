@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using Renegadeware;
+
 namespace HutongGames.PlayMaker.Actions.Game {
     [ActionCategory("Game")]
     public class ExpressionGOActiveSet : ComponentAction<ExpressionGOActive> {

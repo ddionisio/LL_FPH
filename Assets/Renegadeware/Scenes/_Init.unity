@@ -150,8 +150,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scene:
-    name: start
-    path: Assets/Renegadeware/Scenes/start.unity
+    name: main
+    path: Assets/Renegadeware/Scenes/main.unity
   _delay: 0.1
   _destroyAfter: 1
 --- !u!4 &210204824

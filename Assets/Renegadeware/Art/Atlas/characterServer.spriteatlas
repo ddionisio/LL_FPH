@@ -59,14 +59,14 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 8f41b6dd6a18d884f84a7d7b33d1f846, type: 3}
   m_PackedSpriteNamesToIndex:
   - serverBodyExcited
-  - server_neutral-Default-Default-Sad
-  - server_neutral-Default-Default-Neutral
+  - serverFaceSad
+  - serverFaceNeutral
   - serverBodyCrossed
-  - server_neutral-Default-Default-Excited
+  - serverFaceExcited
   - serverBodyPoint
   - serverBodyNeutral
   - serverBodyExplain
-  - server_neutral-Default-Default-Angry
-  - server_neutral-Default-Default-Happy
+  - serverFaceAngry
+  - serverFaceHappy
   m_Tag: characterServer
   m_IsVariant: 0
