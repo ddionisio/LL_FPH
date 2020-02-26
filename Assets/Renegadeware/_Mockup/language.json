@@ -12,6 +12,22 @@
     "sound": "SOUND",
     "close": "CLOSE",
     "intro_1": "intro 1",
-    "intro_2": "intro 2"
+    "intro_2": "intro 2",
+    "food_beef": "Beef",
+    "food_eggs": "Eggs",
+    "food_fruits": "Fruits",
+    "food_lamb": "Lamb",
+    "food_mayo": "Mayonnaise",
+    "food_milk": "Milk",
+    "food_pork": "Pork",
+    "food_poultry": "Poultry",
+    "food_rice_cooked": "Rice (Cooked)",
+    "food_shellfish": "Shellfish",
+    "food_vegetables_sliced": "Vegetables (Sliced)",
+    "food_bread": "Bread (Plain)",
+    "food_cannedGoods": "Canned Goods",
+    "food_flour": "Flour",
+    "food_potato": "Potatoes (Raw)",
+    "food_rice_raw": "Rice (Raw)"
   }
 }
