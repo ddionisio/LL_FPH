@@ -20,35 +20,29 @@ namespace Renegadeware {
         public bool isBusy { get { return mRout != null; } }
 
         public void Goto(Transform target, string pointName) {
-            Stop();
-
-            var child = GetChild(pointName);
-            if(child)
-                mRout = StartCoroutine(DoGoto(target, child, defaultEase, defaultDelay));
-        }
-
-        public void Goto(Transform target, string pointName, float delay) {
-            Stop();
-
-            var child = GetChild(pointName);
-            if(child)
-                mRout = StartCoroutine(DoGoto(target, child, defaultEase, delay));
+            Goto(target, pointName, defaultEase, defaultDelay);
         }
 
         public void Goto(Transform target, string pointName, DG.Tweening.Ease ease) {
-            Stop();
+            Goto(target, pointName, ease, defaultDelay);
+        }
 
-            var child = GetChild(pointName);
-            if(child)
-                mRout = StartCoroutine(DoGoto(target, child, ease, defaultDelay));
+        public void Goto(Transform target, string pointName, float delay) {
+            Goto(target, pointName, defaultEase, delay);
         }
 
         public void Goto(Transform target, string pointName, DG.Tweening.Ease ease, float delay) {
             Stop();
 
             var child = GetChild(pointName);
-            if(child)
-                mRout = StartCoroutine(DoGoto(target, child, ease, delay));
+            if(child) {
+                if(delay > 0f)
+                    mRout = StartCoroutine(DoGoto(target, child, ease, delay));
+                else {
+                    target.position = child.position;
+                    target.forward = child.forward;
+                }
+            }
         }
 
         public void Stop() {

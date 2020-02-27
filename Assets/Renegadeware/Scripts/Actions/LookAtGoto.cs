@@ -19,7 +19,7 @@ namespace HutongGames.PlayMaker.Actions.Game {
         [Tooltip("Set to Unset to use default.")]
         public DG.Tweening.Ease ease;
 
-        [Tooltip("Set to none to use default.")]
+        [Tooltip("Set to none to use default. Set to 0 to move instantly.")]
         public FsmFloat delay;
 
         public FsmBool isWait;

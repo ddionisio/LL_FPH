@@ -11,6 +11,8 @@
     "music": "MUSIC",
     "sound": "SOUND",
     "close": "CLOSE",
+    "tcs_foods": "TCS Foods\n(Time/Temperature Control for Safety)",
+    "non_tcs_foods": "Non-TCS Foods",
     "intro_1": "intro 1",
     "intro_2": "intro 2",
     "food_beef": "Beef",
