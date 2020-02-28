@@ -12,5 +12,26 @@ namespace Renegadeware {
         public int foodScorePerItem;
 
         public int foodScoreTotal { get { return foodCount * foodScorePerItem; } }
+
+        public FoodProductData[] GenerateItems() {
+            var ret = new FoodProductData[foodCount];
+
+            int hCount = foodCount / 2;
+
+            //grab random items from TCS Foods
+            M8.ArrayUtil.Shuffle(TCSFoods);
+
+            for(int i = 0; i < hCount; i++)
+                ret[i] = TCSFoods[i];
+
+            M8.ArrayUtil.Shuffle(nonTCSFoods);
+
+            for(int i = 0; i < hCount; i++)
+                ret[i + hCount] = nonTCSFoods[i];
+
+            M8.ArrayUtil.Shuffle(ret, 1, ret.Length - 1);
+
+            return ret;
+        }
     }
 }

@@ -45,7 +45,7 @@ SpriteAtlas:
     - {fileID: 102900000, guid: 4cf1d0dfea113d5498f55e7cf68331e9, type: 3}
     - {fileID: 102900000, guid: 4705e51feb4fac04c84290f5c5a3720d, type: 3}
     - {fileID: 102900000, guid: 8e60b817a4d58c04b8a2e7cb897901c8, type: 3}
-    totalSpriteSurfaceArea: 298948
+    totalSpriteSurfaceArea: 300208
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -84,12 +84,14 @@ SpriteAtlas:
   - {fileID: 21300000, guid: a8a5ac695c05ac34db9b2ad7b28fa9a8, type: 3}
   - {fileID: 21300000, guid: a44ac7793e05d8148a07b482a78da98e, type: 3}
   - {fileID: 21300000, guid: bb8a087995e8ab149b0f5c36c07f3d96, type: 3}
+  - {fileID: 21300000, guid: 8978f2a9dc2c38b43a5b556518900369, type: 3}
   - {fileID: 21300000, guid: 3c0d7eb9903468c4f9a2ab00d8e565bc, type: 3}
   - {fileID: 21300000, guid: 1936bac986127cb4bad904bfad92c266, type: 3}
   - {fileID: 21300002, guid: 1936bac986127cb4bad904bfad92c266, type: 3}
   - {fileID: 21300000, guid: 5785810ac3b939a429f8642619203dd5, type: 3}
   - {fileID: 21300000, guid: 7168da6aea1c4154bbc52d54856e6639, type: 3}
   - {fileID: 21300000, guid: 5952baaa48d611842a22716276cee699, type: 3}
+  - {fileID: 21300000, guid: e83646acd476410418e0bf338e337799, type: 3}
   - {fileID: 21300000, guid: 36ce24ec9ae04524289ce0e80bf270be, type: 3}
   - {fileID: 21300000, guid: 624d37cdc5631d24f852129bb98d523c, type: 3}
   - {fileID: 21300000, guid: c5a54a7e88b59e547a8905c1ad93d892, type: 3}
@@ -133,12 +135,14 @@ SpriteAtlas:
   - flour
   - circleOutline32x32
   - optionButton
+  - checkIcon
   - riceCooked
   - shade
   - shade_bottom
   - vegetablesSliced
   - gradient8x8
   - ringGlow
+  - wrongIcon
   - circleGlowTiny
   - beef
   - edge_shade

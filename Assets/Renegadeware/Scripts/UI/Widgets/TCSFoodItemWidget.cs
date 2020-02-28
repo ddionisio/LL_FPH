@@ -34,12 +34,16 @@ namespace Renegadeware {
 
         public bool isDragging { get; private set; }
 
+        public event System.Action<TCSFoodItemWidget> dragEndCallback;
+
         private bool mInputEnabled;
         private bool mIsPointerEnter;
 
         private DropAreaWidget mCurDropAreaWidget;
 
         private Coroutine mDropMoveRout;
+
+        private Vector2 mDragRootDefaultLPos;
 
         public void Setup(FoodProductData foodData) {
             data = foodData;
@@ -83,6 +87,10 @@ namespace Renegadeware {
             }
         }
 
+        void Awake() {
+            mDragRootDefaultLPos = dragRoot.localPosition;
+        }
+
         void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData) {
             if(!mIsPointerEnter) {
                 mIsPointerEnter = true;
@@ -123,8 +131,12 @@ namespace Renegadeware {
                         if(mCurDropAreaWidget)
                             mCurDropAreaWidget.isHighlight = false;
 
-                        mCurDropAreaWidget = dropArea;
-                        mCurDropAreaWidget.isHighlight = true;
+                        if(!dropArea.isFull) {
+                            mCurDropAreaWidget = dropArea;
+                            mCurDropAreaWidget.isHighlight = true;
+                        }
+                        else
+                            mCurDropAreaWidget = null;
                     }
                     else if(mCurDropAreaWidget) {
                         mCurDropAreaWidget.isHighlight = false;
@@ -151,18 +163,25 @@ namespace Renegadeware {
                         var siblingIndex = transform.GetSiblingIndex();
                         var otherSiblingIndex = otherFoodItemWidget.transform.GetSiblingIndex();
 
-                        otherFoodItemWidget.DropTo(transform.parent, siblingIndex);
+                        var parent = transform.parent;
+                        var otherParent = otherFoodItemWidget.transform.parent;
 
-                        transform.SetParent(otherFoodItemWidget.transform.parent, false);
+                        otherFoodItemWidget.DropTo(parent, siblingIndex);
+
+                        transform.SetParent(otherParent, false);
                         transform.SetSiblingIndex(otherSiblingIndex);
                     }
                 }
-                else if(pointerGO.CompareTag(dragTagDropArea) && transform.parent != pointerGO.transform) { //drop area?
-                    transform.SetParent(pointerGO.transform, false);
+                else if(transform.parent != pointerGO.transform) { //drop area?
+                    var dropArea = GetDropAreaWidget(pointerGO);
+                    if(dropArea && !dropArea.isFull)
+                        transform.SetParent(pointerGO.transform, false);
                 }
             }
 
             EndDrag();
+
+            dragEndCallback?.Invoke(this);
         }
 
         IEnumerator DoDropMove() {
@@ -172,8 +191,8 @@ namespace Renegadeware {
 
             var easeFunc = DG.Tweening.Core.Easing.EaseManager.ToEaseFunction(dragDropEase);
 
-            var startPos = dragRoot.position;
-            var endPos = transform.position;
+            Vector2 startPos = dragRoot.position;
+            Vector2 endPos = (Vector2)transform.position + mDragRootDefaultLPos;
 
             var len = (endPos - startPos).magnitude;
             
@@ -187,7 +206,7 @@ namespace Renegadeware {
 
                 var t = easeFunc(curTime, delay, 0f, 0f);
 
-                dragRoot.position = Vector3.Lerp(startPos, endPos, t);
+                dragRoot.position = Vector2.Lerp(startPos, endPos, t);
             }
 
             ResetDrop();
@@ -220,7 +239,7 @@ namespace Renegadeware {
 
         private void UpdateHighlight() {
             if(highlightGO)
-                highlightGO.SetActive(inputEnabled && !isDragging);
+                highlightGO.SetActive(inputEnabled && !isDragging && mIsPointerEnter);
         }
 
         private void DropMoveStart() {
@@ -238,7 +257,7 @@ namespace Renegadeware {
 
         private void ResetDrop() {
             dragRoot.SetParent(transform, false);
-            dragRoot.localPosition = Vector3.zero;
+            dragRoot.localPosition = mDragRootDefaultLPos;
         }
     }
 }

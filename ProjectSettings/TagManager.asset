@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - DropArea
+  - DragGuide
   layers:
   - Default
   - TransparentFX
