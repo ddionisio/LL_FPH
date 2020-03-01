@@ -221,7 +221,7 @@ namespace Renegadeware {
             mRout = null;
         }
 
-        void OnItemDragEnd(TCSFoodItemWidget itm) {
+        void OnItemDragEnd(DragWidget itm) {
             mIsDragEnd = true;
 
             //hide drag guide

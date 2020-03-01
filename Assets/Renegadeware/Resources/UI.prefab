@@ -2721,16 +2721,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b427e7479d494e4c85e6d3c3c542ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 870454838}
-  nameLabel: {fileID: 325164924}
   highlightGO: {fileID: 1504541126}
-  correctGO: {fileID: 2008541822}
-  wrongGO: {fileID: 500563195}
   dragTagDropArea: DropArea
   dragArea: {fileID: 1642870334}
   dragRoot: {fileID: 2068587340}
   dragDropEase: 3
   dragDropSpeed: 1000
+  icon: {fileID: 870454838}
+  nameLabel: {fileID: 325164924}
+  correctGO: {fileID: 2008541822}
+  wrongGO: {fileID: 500563195}
 --- !u!222 &454421137
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6832,8 +6832,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1278196355}
-  takeOpen: 
-  takeClose: 
+  takeOpen: enter
+  takeClose: exit
 --- !u!114 &1278196355
 MonoBehaviour:
   m_ObjectHideFlags: 0
