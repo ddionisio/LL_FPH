@@ -31,6 +31,24 @@
     "food_cannedGoods": "Canned Goods",
     "food_flour": "Flour",
     "food_potato": "Potatoes (Raw)",
-    "food_rice_raw": "Rice (Raw)"
+    "food_rice_raw": "Rice (Raw)",
+    "tcsFoodDesc_meats_title": "Meats",
+    "tcsFoodDesc_meats": "Bacon - in raw form\nBeef - ground, roasts, steak\nGravy\nGround meats - all\nHot Dogs\nLunch meat\nMeat casseroles\nPork - ground, ham, roasts\nProcessed meats - all\nSausage\nSoups Stews",
+    "tcsFoodDesc_poultry_title": "Poultry",
+    "tcsFoodDesc_poultry": "Chicken - ground, roasted, barbequed, fried, nuggets, patties, strips\nCasseroles with chicken/turkey\nDressing\nGravy\nPrecooked, processed products\nTurkey – ground, roast\nSoups Stews",
+    "tcsFoodDesc_seafood_title": "Seafood",
+    "tcsFoodDesc_seafood": "Fish, Salmon, Tuna",
+    "tcsFoodDesc_bakery_title": "Bakery Foods",
+    "tcsFoodDesc_bakery": "Cream pastries\nCream/custard pies and tarts\nPudding - prepared",
+    "tcsFoodDesc_dairy_title": "Dairy Foods",
+    "tcsFoodDesc_dairy": "Whipped butter/whipped margarine\nCheese - mozzarella, cottage, cream, Ricotta\nCream - real, sauce, white\nDairy whipped topping\nIce cream\nMilk",
+    "tcsFoodDesc_pasta_title": "Pasta",
+    "tcsFoodDesc_pasta": "Noodles - all kinds, cooked\nRice - cooked",
+    "tcsFoodDesc_eggs_title": "Eggs",
+    "tcsFoodDesc_eggs": "Egg casseroles\nEgg dishes\nDeviled eggs\nFried eggs\nHard-cooked eggs\nOmelets\nScrambled eggs",
+    "tcsFoodDesc_fruits_veg_title": "Fruits and Vegetables",
+    "tcsFoodDesc_fruits_veg": "Dry beans - cooked\nPotatoes - baked, boiled mashed (fresh, instant), scalloped/augratin (fresh, dehydrated)\nCut/prepared fresh fruits and vegetables (including melons, tomatoes and salad greens)",
+    "tcsFoodDesc_misc_title": "Misc.",
+    "tcsFoodDesc_misc": "Salad dressings prepared from a mix"
   }
 }
