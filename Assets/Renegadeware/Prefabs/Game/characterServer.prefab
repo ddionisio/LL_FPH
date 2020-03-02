@@ -90,7 +90,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1232663564109174742
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1430,9 +1430,9 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -131, y: 170}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 131, y: 170}
   m_SizeDelta: {x: 250, y: 650}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3473516704250085143
@@ -1488,7 +1488,7 @@ MonoBehaviour:
     rootGroup:
       group_name: 
       group_id: 0
-      elements: 020000000a000000
+      elements: 02000000
       foldout: 1
     groupValues: []
   - name: exit
@@ -1536,57 +1536,7 @@ MonoBehaviour:
       _targetPath: 
       axis: 4
       _obj: {fileID: 175417480106181228}
-    - id: 10
-      name: Track2
-      foldout: 1
-      _targetPath: 
-      axis: 4
-      _obj: {fileID: 175417480106181228}
     _rotationEulerKeys:
-    - version: 1
-      interp: 0
-      frame: 1
-      easeType: 1
-      amplitude: 0
-      period: 0
-      customEase: []
-      rotation: {x: -0, y: 0, z: -5}
-      endFrame: 15
-      path:
-      - {x: -0, y: 0, z: -5}
-      - {x: -0, y: 0, z: -5}
-      - {x: 0, y: 0, z: 5}
-      - {x: -0, y: 0, z: 0}
-    - version: 1
-      interp: 0
-      frame: 6
-      easeType: 1
-      amplitude: 0
-      period: 0
-      customEase: []
-      rotation: {x: -0, y: 0, z: -5}
-      endFrame: -1
-      path: []
-    - version: 1
-      interp: 0
-      frame: 11
-      easeType: 1
-      amplitude: 0
-      period: 0
-      customEase: []
-      rotation: {x: 0, y: 0, z: 5}
-      endFrame: -1
-      path: []
-    - version: 1
-      interp: 0
-      frame: 15
-      easeType: 1
-      amplitude: 0
-      period: 0
-      customEase: []
-      rotation: {x: -0, y: 0, z: 0}
-      endFrame: -1
-      path: []
     - version: 1
       interp: 0
       frame: 1
@@ -1656,10 +1606,10 @@ MonoBehaviour:
       amplitude: 0
       period: 0
       customEase: []
-      position: {x: 370, y: -325, z: 0}
+      position: {x: -283, y: -325, z: 0}
       endFrame: 15
       path:
-      - {x: 370, y: -325, z: 0}
+      - {x: -283, y: -325, z: 0}
       - {x: 0, y: -325, z: 0}
       isConstSpeed: 1
     - version: 2
@@ -1705,16 +1655,13 @@ MonoBehaviour:
     - type: 10
       index: 0
       keyIndices: 0000000001000000
-    - type: 8
-      index: 0
-      keyIndices: 00000000010000000200000003000000
     - type: 10
       index: 1
       keyIndices: 0200000003000000
     - type: 8
-      index: 1
-      keyIndices: 04000000050000000600000007000000
-    _takeTrackCounts: 0200000002000000
+      index: 0
+      keyIndices: 00000000010000000200000003000000
+    _takeTrackCounts: 0100000002000000
 --- !u!1 &1232663565179602299
 GameObject:
   m_ObjectHideFlags: 0
@@ -2834,7 +2781,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1232663565783612160
 RectTransform:
   m_ObjectHideFlags: 0

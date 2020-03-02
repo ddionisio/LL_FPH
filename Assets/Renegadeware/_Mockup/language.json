@@ -32,6 +32,7 @@
     "food_flour": "Flour",
     "food_potato": "Potatoes (Raw)",
     "food_rice_raw": "Rice (Raw)",
+    "food_produce": "Produce",
     "tcsFoodDesc_meats_title": "Meats",
     "tcsFoodDesc_meats": "Bacon - in raw form\nBeef - ground, roasts, steak\nGravy\nGround meats - all\nHot Dogs\nLunch meat\nMeat casseroles\nPork - ground, ham, roasts\nProcessed meats - all\nSausage\nSoups Stews",
     "tcsFoodDesc_poultry_title": "Poultry",
@@ -49,6 +50,14 @@
     "tcsFoodDesc_fruits_veg_title": "Fruits and Vegetables",
     "tcsFoodDesc_fruits_veg": "Dry beans - cooked\nPotatoes - baked, boiled mashed (fresh, instant), scalloped/augratin (fresh, dehydrated)\nCut/prepared fresh fruits and vegetables (including melons, tomatoes and salad greens)",
     "tcsFoodDesc_misc_title": "Misc.",
-    "tcsFoodDesc_misc": "Salad dressings prepared from a mix"
+    "tcsFoodDesc_misc": "Salad dressings prepared from a mix",
+    "washProduce_title": "Washing Produce",
+    "washProduce_item_1": "Wash your hands for 20 seconds with warm water and soap before and after preparing fresh produce.",
+    "washProduce_item_2": "If damage or bruising occurs before eating or handling, cut away the damaged or bruised areas before preparing or eating.",
+    "washProduce_item_3": "Rinse produce BEFORE you peel it, so dirt and bacteria aren’t transferred from the knife onto the fruit or vegetable.",
+    "washProduce_item_4": "Gently rub produce while holding under plain running water. There’s no need to use soap or a produce wash.",
+    "washProduce_item_5": "Use a clean vegetable brush to scrub firm produce, such as melons and cucumbers.",
+    "washProduce_item_6": "Dry produce with a clean cloth or paper towel to further reduce bacteria that may be present.",
+    "washProduce_item_7": "Remove the outermost leaves of a head of lettuce or cabbage."
   }
 }

@@ -19,3 +19,19 @@ MonoBehaviour:
   languageExtraInfos:
   - key: welcome
     voiceDuration: 1.5
+  - key: washProduce_title
+    voiceDuration: 2.5
+  - key: washProduce_item_1
+    voiceDuration: 4
+  - key: washProduce_item_2
+    voiceDuration: 6
+  - key: washProduce_item_3
+    voiceDuration: 6
+  - key: washProduce_item_4
+    voiceDuration: 6
+  - key: washProduce_item_5
+    voiceDuration: 6
+  - key: washProduce_item_6
+    voiceDuration: 6
+  - key: washProduce_item_7
+    voiceDuration: 5
