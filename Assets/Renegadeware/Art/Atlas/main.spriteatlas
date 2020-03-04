@@ -45,10 +45,12 @@ SpriteAtlas:
     - {fileID: 102900000, guid: 4cf1d0dfea113d5498f55e7cf68331e9, type: 3}
     - {fileID: 102900000, guid: 4705e51feb4fac04c84290f5c5a3720d, type: 3}
     - {fileID: 102900000, guid: 8e60b817a4d58c04b8a2e7cb897901c8, type: 3}
-    totalSpriteSurfaceArea: 365744
+    - {fileID: 102900000, guid: c8e4bc67202d72f4a9880e02c884a587, type: 3}
+    totalSpriteSurfaceArea: 633021
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: c6edb55074e16164da14df08498b3408, type: 3}
   - {fileID: 21300000, guid: 32c39060eb6d8cd47911394652da0dcd, type: 3}
   - {fileID: 21300000, guid: afb95580ee3e0d34f9c3feb8f70214a2, type: 3}
   - {fileID: 21300000, guid: f4683e31b11d8c249ac19e37611319cd, type: 3}
@@ -60,15 +62,20 @@ SpriteAtlas:
   - {fileID: 21300002, guid: bf8c0222be72dfd48a68e5cf2a7ed5c1, type: 3}
   - {fileID: 21300000, guid: bf8c0222be72dfd48a68e5cf2a7ed5c1, type: 3}
   - {fileID: 21300000, guid: 7f53a9d2f0a5bf340b953703ae0fac40, type: 3}
+  - {fileID: 21300000, guid: 1abaebf232c3b9d409c5c9383ee84f5d, type: 3}
   - {fileID: 2383154019900357971, guid: c05e5e136fe7a084084e48c38b81b054, type: 3}
   - {fileID: -4249189435241424335, guid: c05e5e136fe7a084084e48c38b81b054, type: 3}
+  - {fileID: 21300000, guid: e5dc777390553e4499a405c82af83aef, type: 3}
   - {fileID: 21300000, guid: 347e18d3aaa23b740abd44b433fa1716, type: 3}
+  - {fileID: 21300000, guid: 44a2e43498084d140b46c5499e074241, type: 3}
   - {fileID: 21300000, guid: d985b654a2dd4e54482f774cec3f7b9c, type: 3}
   - {fileID: 21300000, guid: 1a2b6884301574a47aa7daf6a8807b6b, type: 3}
+  - {fileID: 21300000, guid: 21c769e4040edd24e83c0830fb109b60, type: 3}
   - {fileID: 21300000, guid: 4f3fdd0562f3b55479372ed4fa740f1f, type: 3}
   - {fileID: 21300000, guid: e9c8ee955c09c344aa79e9bb93b94216, type: 3}
   - {fileID: 21300000, guid: ffac66f6e90bc1143957585918629f35, type: 3}
   - {fileID: 21300000, guid: c89245a760413c349b502cdd4f554d52, type: 3}
+  - {fileID: 21300000, guid: bf01b0b7199ec26448b016fd2de647e5, type: 3}
   - {fileID: 21300000, guid: 326ab6c73d9e81346bb6774298a0d825, type: 3}
   - {fileID: 21300000, guid: 5427e4f7e1cb9704892fb4854f1cf6a9, type: 3}
   - {fileID: 21300000, guid: b5f1f248fc842084cb79fa132167e30b, type: 3}
@@ -101,6 +108,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: ba7b116fb1dc9e24b8a2adf32b34fc87, type: 3}
   - {fileID: 21300000, guid: 49d782ef45be5004b9edb429ea0994ce, type: 3}
   m_PackedSpriteNamesToIndex:
+  - meatRaw_NW
   - fruits
   - speakIcon
   - downArrow
@@ -112,15 +120,20 @@ SpriteAtlas:
   - shadeWhite_bottomLeft
   - shadeWhite
   - milk
+  - explodePixel2
   - roundRectGlow
   - roundRectGlow_bottom
+  - explodePixel4
   - poultry
+  - explodePixel3
   - circleGlow
   - mayonnaise
+  - explodePixel5
   - cannedGoods
   - outline1x1
   - bread
   - potato
+  - explodePixel1
   - circle32x32
   - dot
   - tutorialHandPointDown
