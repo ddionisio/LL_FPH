@@ -3,75 +3,77 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class MeatDropWidget : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
-    public Transform dragRoot;
-    public Transform dragToArea;
+namespace Renegadeware {
+    public class MeatDropWidget : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
+        public Transform dragRoot;
+        public Transform dragToArea;
 
-    [M8.TagSelector]
-    public string tagDragGuide;
+        [M8.TagSelector]
+        public string tagDragGuide;
 
-    public M8.Signal signalInvokeDragEnd;
+        public M8.Signal signalInvokeDragEnd;
 
-    private bool mIsDragging;
-    private LoLExt.DragToGuideWidget mDragGuide;
+        private bool mIsDragging;
+        private LoLExt.DragToGuideWidget mDragGuide;
 
-    void OnApplicationFocus(bool focus) {
-        if(!focus) {
-            EndDrag();
-        }
-    }
-
-    void OnEnable() {
-        dragRoot.gameObject.SetActive(false);
-
-        mIsDragging = false;
-
-        if(!mDragGuide && !string.IsNullOrEmpty(tagDragGuide)) {
-            var go = GameObject.FindGameObjectWithTag(tagDragGuide);
-            if(go)
-                mDragGuide = go.GetComponent<LoLExt.DragToGuideWidget>();
+        void OnApplicationFocus(bool focus) {
+            if(!focus) {
+                EndDrag();
+            }
         }
 
-        if(mDragGuide)
-            mDragGuide.Show(false, transform.position, dragToArea.position);
-    }
+        void OnEnable() {
+            dragRoot.gameObject.SetActive(false);
 
-    void OnDisable() {
-        if(mDragGuide)
-            mDragGuide.Hide();
-    }
+            mIsDragging = false;
 
-    void IBeginDragHandler.OnBeginDrag(PointerEventData eventData) {
-        dragRoot.gameObject.SetActive(true);
+            if(!mDragGuide && !string.IsNullOrEmpty(tagDragGuide)) {
+                var go = GameObject.FindGameObjectWithTag(tagDragGuide);
+                if(go)
+                    mDragGuide = go.GetComponent<LoLExt.DragToGuideWidget>();
+            }
 
-        mIsDragging = true;
-    }
+            if(mDragGuide)
+                mDragGuide.Show(false, transform.position, dragToArea.position);
+        }
 
-    void IDragHandler.OnDrag(PointerEventData eventData) {
-        if(!mIsDragging)
-            return;
-
-        dragRoot.position = eventData.position;
-    }
-
-    void IEndDragHandler.OnEndDrag(PointerEventData eventData) {
-        if(!mIsDragging)
-            return;
-
-        if(eventData.pointerCurrentRaycast.isValid && eventData.pointerCurrentRaycast.gameObject == dragToArea.gameObject) {
-            if(signalInvokeDragEnd)
-                signalInvokeDragEnd.Invoke();
-
+        void OnDisable() {
             if(mDragGuide)
                 mDragGuide.Hide();
         }
 
-        EndDrag();
-    }
+        void IBeginDragHandler.OnBeginDrag(PointerEventData eventData) {
+            dragRoot.gameObject.SetActive(true);
 
-    void EndDrag() {
-        dragRoot.gameObject.SetActive(false);
+            mIsDragging = true;
+        }
 
-        mIsDragging = false;
+        void IDragHandler.OnDrag(PointerEventData eventData) {
+            if(!mIsDragging)
+                return;
+
+            dragRoot.position = eventData.position;
+        }
+
+        void IEndDragHandler.OnEndDrag(PointerEventData eventData) {
+            if(!mIsDragging)
+                return;
+
+            if(eventData.pointerCurrentRaycast.isValid && eventData.pointerCurrentRaycast.gameObject == dragToArea.gameObject) {
+                if(signalInvokeDragEnd)
+                    signalInvokeDragEnd.Invoke();
+
+                if(mDragGuide)
+                    mDragGuide.Hide();
+            }
+
+            EndDrag();
+        }
+
+        void EndDrag() {
+            dragRoot.gameObject.SetActive(false);
+
+            mIsDragging = false;
+        }
     }
 }

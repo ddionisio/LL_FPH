@@ -1,0 +1,580 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b657d375560225e468bf4fd8259bab57, type: 3}
+  m_Name: thermometerControlResult
+  m_EditorClassIdentifier: 
+  takeData:
+  - name: enter
+    frameRate: 30
+    endFramePadding: 0
+    numLoop: 1
+    loopMode: 0
+    loopBackToFrame: 0
+    trackCounter: 7
+    groupCounter: 0
+    rootGroup:
+      group_name: 
+      group_id: 0
+      elements: 020000000300000004000000050000000600000007000000
+      foldout: 1
+    groupValues: []
+  - name: exit
+    frameRate: 30
+    endFramePadding: 0
+    numLoop: 1
+    loopMode: 0
+    loopBackToFrame: 0
+    trackCounter: 7
+    groupCounter: 0
+    rootGroup:
+      group_name: 
+      group_id: 0
+      elements: 020000000300000004000000050000000600000007000000
+      foldout: 1
+    groupValues: []
+  serializeData:
+    _audioTracks: []
+    _audioKeys: []
+    _cameraSwitcherTracks: []
+    _cameraSwitcherKeys: []
+    _eventTracks: []
+    _eventKeys: []
+    _goSetActiveTracks: []
+    _goSetActiveKeys: []
+    _materialTracks: []
+    _materialKeys: []
+    _orientationTracks: []
+    _orientationKeys: []
+    _propertyTracks:
+    - id: 3
+      name: Track2
+      foldout: 1
+      _targetPath: degreeRoot
+      valueType: 2
+      obj: {fileID: 0}
+      component: {fileID: 0}
+      componentName: CanvasGroup
+      fieldName: 
+      propertyName: alpha
+    - id: 3
+      name: Track2
+      foldout: 1
+      _targetPath: degreeRoot
+      valueType: 2
+      obj: {fileID: 0}
+      component: {fileID: 0}
+      componentName: CanvasGroup
+      fieldName: 
+      propertyName: alpha
+    _propertyKeys:
+    - version: 2
+      interp: 1
+      frame: 6
+      easeType: 1
+      amplitude: 0
+      period: 0
+      customEase: []
+      endFrame: 10
+      val: 0
+      valString: 
+      valObj: {fileID: 0}
+      vect4: {x: 0, y: 0, z: 0, w: 0}
+    - version: 2
+      interp: 1
+      frame: 10
+      easeType: 1
+      amplitude: 0
+      period: 0
+      customEase: []
+      endFrame: -1
+      val: 1
+      valString: 
+      valObj: {fileID: 0}
+      vect4: {x: 0, y: 0, z: 0, w: 0}
+    - version: 2
+      interp: 1
+      frame: 7
+      easeType: 1
+      amplitude: 0
+      period: 0
+      customEase: []
+      endFrame: 11
+      val: 1
+      valString: 
+      valObj: {fileID: 0}
+      vect4: {x: 0, y: 0, z: 0, w: 0}
+    - version: 2
+      interp: 1
+      frame: 11
+      easeType: 1
+      amplitude: 0
+      period: 0
+      customEase: []
+      endFrame: -1
+      val: 0
+      valString: 
+      valObj: {fileID: 0}
+      vect4: {x: 0, y: 0, z: 0, w: 0}
+    _rotationEulerTracks: []
+    _rotationEulerKeys: []
+    _rotationTracks: []
+    _rotationKeys: []
+    _translationTracks:
+    - id: 4
+      name: Track3
+      foldout: 1
+      _targetPath: degreeRoot/degreeSourcePanel
+      _obj: {fileID: 0}
+      pixelSnap: 0
+      pixelPerUnit: 100
+    - id: 5
+      name: Track4
+      foldout: 1
+      _targetPath: degreeRoot/degreeTargetPanel
+      _obj: {fileID: 0}
+      pixelSnap: 0
+      pixelPerUnit: 100
+    - id: 4
+      name: Track3
+      foldout: 1
+      _targetPath: degreeRoot/degreeSourcePanel
+      _obj: {fileID: 0}
+      pixelSnap: 0
+      pixelPerUnit: 100
+    - id: 5
+      name: Track4
+      foldout: 1
+      _targetPath: degreeRoot/degreeTargetPanel
+      _obj: {fileID: 0}
+      pixelSnap: 0
+      pixelPerUnit: 100
+    _translationKeys:
+    - version: 2
+      interp: 0
+      frame: 5
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: -46, y: 50, z: 0}
+      endFrame: 15
+      path:
+      - {x: -46, y: 50, z: 0}
+      - {x: -150, y: 50, z: 0}
+      - {x: -128, y: 50, z: 0}
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 11
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: -150, y: 50, z: 0}
+      endFrame: 11
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 15
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: -128, y: 50, z: 0}
+      endFrame: 15
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 5
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: 64, y: 50, z: 0}
+      endFrame: 15
+      path:
+      - {x: 64, y: 50, z: 0}
+      - {x: 150, y: 50, z: 0}
+      - {x: 128, y: 50, z: 0}
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 11
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: 150, y: 50, z: 0}
+      endFrame: 11
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 15
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: 128, y: 50, z: 0}
+      endFrame: 15
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 1
+      easeType: 2
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: -128, y: 50, z: 0}
+      endFrame: 11
+      path:
+      - {x: -128, y: 50, z: 0}
+      - {x: -150, y: 50, z: 0}
+      - {x: -46, y: 50, z: 0}
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 5
+      easeType: 2
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: -150, y: 50, z: 0}
+      endFrame: 5
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 11
+      easeType: 2
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: -46, y: 50, z: 0}
+      endFrame: 11
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 1
+      easeType: 2
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: 128, y: 50, z: 0}
+      endFrame: 11
+      path:
+      - {x: 128, y: 50, z: 0}
+      - {x: 150, y: 50, z: 0}
+      - {x: 64, y: 50, z: 0}
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 5
+      easeType: 2
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: 150, y: 50, z: 0}
+      endFrame: 5
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 11
+      easeType: 2
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: 64, y: 50, z: 0}
+      endFrame: 11
+      path: []
+      isConstSpeed: 1
+    _unityAnimationTracks: []
+    _unityAnimationKeys: []
+    _scaleTracks:
+    - id: 2
+      name: Track1
+      foldout: 1
+      _targetPath: titlePanel
+      axis: -1
+      _obj: {fileID: 0}
+    - id: 6
+      name: Track5
+      foldout: 1
+      _targetPath: resultPanel
+      axis: -1
+      _obj: {fileID: 0}
+    - id: 7
+      name: Track6
+      foldout: 1
+      _targetPath: scorePanel
+      axis: -1
+      _obj: {fileID: 0}
+    - id: 2
+      name: Track1
+      foldout: 1
+      _targetPath: titlePanel
+      axis: -1
+      _obj: {fileID: 0}
+    - id: 6
+      name: Track5
+      foldout: 1
+      _targetPath: resultPanel
+      axis: -1
+      _obj: {fileID: 0}
+    - id: 7
+      name: Track6
+      foldout: 1
+      _targetPath: scorePanel
+      axis: -1
+      _obj: {fileID: 0}
+    _scaleKeys:
+    - version: 1
+      interp: 0
+      frame: 1
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      scale: {x: 0, y: 0, z: 1}
+      endFrame: 8
+      path:
+      - {x: 0, y: 0, z: 1}
+      - {x: 1.15, y: 1.15, z: 1}
+      - {x: 1, y: 1, z: 1}
+    - version: 1
+      interp: 0
+      frame: 5
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      scale: {x: 1.15, y: 1.15, z: 1}
+      endFrame: -1
+      path: []
+    - version: 1
+      interp: 0
+      frame: 8
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      scale: {x: 1, y: 1, z: 1}
+      endFrame: -1
+      path: []
+    - version: 1
+      interp: 0
+      frame: 10
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      scale: {x: 0, y: 0, z: 1}
+      endFrame: 20
+      path:
+      - {x: 0, y: 0, z: 1}
+      - {x: 1.2, y: 1.2, z: 1}
+      - {x: 1, y: 1, z: 1}
+    - version: 1
+      interp: 0
+      frame: 16
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      scale: {x: 1.2, y: 1.2, z: 1}
+      endFrame: -1
+      path: []
+    - version: 1
+      interp: 0
+      frame: 20
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      scale: {x: 1, y: 1, z: 1}
+      endFrame: -1
+      path: []
+    - version: 1
+      interp: 0
+      frame: 15
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      scale: {x: 0, y: 0, z: 1}
+      endFrame: 25
+      path:
+      - {x: 0, y: 0, z: 1}
+      - {x: 1.2, y: 1.2, z: 1}
+      - {x: 1, y: 1, z: 1}
+    - version: 1
+      interp: 0
+      frame: 21
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      scale: {x: 1.2, y: 1.2, z: 1}
+      endFrame: -1
+      path: []
+    - version: 1
+      interp: 0
+      frame: 25
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      scale: {x: 1, y: 1, z: 1}
+      endFrame: -1
+      path: []
+    - version: 1
+      interp: 0
+      frame: 1
+      easeType: 2
+      amplitude: 0
+      period: 0
+      customEase: []
+      scale: {x: 1, y: 1, z: 1}
+      endFrame: 8
+      path:
+      - {x: 1, y: 1, z: 1}
+      - {x: 1.15, y: 1.15, z: 1}
+      - {x: 0, y: 0, z: 1}
+    - version: 1
+      interp: 0
+      frame: 4
+      easeType: 2
+      amplitude: 0
+      period: 0
+      customEase: []
+      scale: {x: 1.15, y: 1.15, z: 1}
+      endFrame: -1
+      path: []
+    - version: 1
+      interp: 0
+      frame: 8
+      easeType: 2
+      amplitude: 0
+      period: 0
+      customEase: []
+      scale: {x: 0, y: 0, z: 1}
+      endFrame: -1
+      path: []
+    - version: 1
+      interp: 0
+      frame: 1
+      easeType: 2
+      amplitude: 0
+      period: 0
+      customEase: []
+      scale: {x: 1, y: 1, z: 1}
+      endFrame: 11
+      path:
+      - {x: 1, y: 1, z: 1}
+      - {x: 1.2, y: 1.2, z: 1}
+      - {x: 0, y: 0, z: 1}
+    - version: 1
+      interp: 0
+      frame: 5
+      easeType: 2
+      amplitude: 0
+      period: 0
+      customEase: []
+      scale: {x: 1.2, y: 1.2, z: 1}
+      endFrame: -1
+      path: []
+    - version: 1
+      interp: 0
+      frame: 11
+      easeType: 2
+      amplitude: 0
+      period: 0
+      customEase: []
+      scale: {x: 0, y: 0, z: 1}
+      endFrame: -1
+      path: []
+    - version: 1
+      interp: 0
+      frame: 1
+      easeType: 2
+      amplitude: 0
+      period: 0
+      customEase: []
+      scale: {x: 1, y: 1, z: 1}
+      endFrame: 11
+      path:
+      - {x: 1, y: 1, z: 1}
+      - {x: 1.2, y: 1.2, z: 1}
+      - {x: 0, y: 0, z: 1}
+    - version: 1
+      interp: 0
+      frame: 5
+      easeType: 2
+      amplitude: 0
+      period: 0
+      customEase: []
+      scale: {x: 1.2, y: 1.2, z: 1}
+      endFrame: -1
+      path: []
+    - version: 1
+      interp: 0
+      frame: 11
+      easeType: 2
+      amplitude: 0
+      period: 0
+      customEase: []
+      scale: {x: 0, y: 0, z: 1}
+      endFrame: -1
+      path: []
+    _trackLookups:
+    - type: 11
+      index: 0
+      keyIndices: 000000000100000002000000
+    - type: 7
+      index: 0
+      keyIndices: 0000000001000000
+    - type: 10
+      index: 0
+      keyIndices: 000000000100000002000000
+    - type: 10
+      index: 1
+      keyIndices: 030000000400000005000000
+    - type: 11
+      index: 1
+      keyIndices: 030000000400000005000000
+    - type: 11
+      index: 2
+      keyIndices: 060000000700000008000000
+    - type: 11
+      index: 3
+      keyIndices: 090000000a0000000b000000
+    - type: 7
+      index: 1
+      keyIndices: 0200000003000000
+    - type: 10
+      index: 2
+      keyIndices: 060000000700000008000000
+    - type: 10
+      index: 3
+      keyIndices: 090000000a0000000b000000
+    - type: 11
+      index: 4
+      keyIndices: 0c0000000d0000000e000000
+    - type: 11
+      index: 5
+      keyIndices: 0f0000001000000011000000
+    _takeTrackCounts: 0600000006000000
