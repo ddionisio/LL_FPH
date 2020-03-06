@@ -64,6 +64,11 @@
     "washProduce_item_4": "Gently rub produce while holding under plain running water. There’s no need to use soap or a produce wash.",
     "washProduce_item_5": "Use a clean vegetable brush to scrub firm produce, such as melons and cucumbers.",
     "washProduce_item_6": "Dry produce with a clean cloth or paper towel to further reduce bacteria that may be present.",
-    "washProduce_item_7": "Remove the outermost leaves of a head of lettuce or cabbage."
+    "washProduce_item_7": "Remove the outermost leaves of a head of lettuce or cabbage.",
+    "thermometer_broken": "Something is not right with this thermometer, should we proceed to use it?",
+    "thermometer_broken0": "Yeah, it's fine.",
+    "thermometer_broken1": "No, it's broken.",
+    "thermometer_broken_correct": "That's right, the arrow wasn't moving at all when the thermometer was dipped into the glass of ice. Good call!",
+    "thermometer_broken_wrong": "Wrong! The arrow wasn't moving at all when the thermometer was dipped into the glass of ice."
   }
 }

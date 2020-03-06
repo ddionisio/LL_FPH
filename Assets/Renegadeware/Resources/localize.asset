@@ -35,3 +35,9 @@ MonoBehaviour:
     voiceDuration: 6
   - key: washProduce_item_7
     voiceDuration: 5
+  - key: thermometer_broken
+    voiceDuration: 3
+  - key: thermometer_broken0
+    voiceDuration: 1.5
+  - key: thermometer_broken1
+    voiceDuration: 1.5

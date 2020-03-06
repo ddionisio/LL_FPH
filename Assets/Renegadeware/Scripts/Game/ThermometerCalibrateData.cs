@@ -6,6 +6,7 @@ namespace Renegadeware {
     [CreateAssetMenu(fileName = "ThermometerCalibrateData", menuName = "Game/Thermometer Calibrate Data")]
     public class ThermometerCalibrateData : ScriptableObject {
         public int scorePerAdjust;
+        public int scoreBroken;
         public int adjustCount;
 
         public float targetDegree;

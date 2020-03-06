@@ -108,9 +108,9 @@ namespace LoLExt {
             mCurChoiceIndex = parms.ContainsKey(parmStartSelect) ? parms.GetValue<int>(parmStartSelect) : -1;
 
             //setup display
-            titleLabel.text = !string.IsNullOrEmpty(mTitleTextRef) ? M8.Localize.Get(mTitleTextRef) : "";
+            if(titleLabel) titleLabel.text = !string.IsNullOrEmpty(mTitleTextRef) ? M8.Localize.Get(mTitleTextRef) : "";
 
-            descLabel.text = !string.IsNullOrEmpty(mDescTextRef) ? M8.Localize.Get(mDescTextRef) : "";
+            if(descLabel) descLabel.text = !string.IsNullOrEmpty(mDescTextRef) ? M8.Localize.Get(mDescTextRef) : "";
 
             //setup choices
             ClearChoices();
@@ -192,6 +192,8 @@ namespace LoLExt {
                     itm.selected = false;
                     itm.interactable = false;
                     itm.gameObject.SetActive(true);
+
+                    mItemActives.Add(itm);
                 }
             }
         }

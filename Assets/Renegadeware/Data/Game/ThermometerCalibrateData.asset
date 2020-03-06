@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: ThermometerCalibrateData
   m_EditorClassIdentifier: 
   scorePerAdjust: 250
-  adjustCount: 3
+  scoreBroken: 250
+  adjustCount: 2
+  targetDegree: 32

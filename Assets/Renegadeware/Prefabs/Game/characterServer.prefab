@@ -1502,7 +1502,7 @@ MonoBehaviour:
     rootGroup:
       group_name: 
       group_id: 0
-      elements: 020000000a000000
+      elements: 02000000
       foldout: 1
     groupValues: []
   _defaultTakeName: 
@@ -1529,58 +1529,8 @@ MonoBehaviour:
     _orientationKeys: []
     _propertyTracks: []
     _propertyKeys: []
-    _rotationEulerTracks:
-    - id: 10
-      name: Track2
-      foldout: 1
-      _targetPath: 
-      axis: 4
-      _obj: {fileID: 175417480106181228}
-    _rotationEulerKeys:
-    - version: 1
-      interp: 0
-      frame: 1
-      easeType: 1
-      amplitude: 0
-      period: 0
-      customEase: []
-      rotation: {x: -0, y: 0, z: 0}
-      endFrame: 15
-      path:
-      - {x: -0, y: 0, z: 0}
-      - {x: 0, y: 0, z: 5}
-      - {x: -0, y: 0, z: -5}
-      - {x: -0, y: 0, z: -5}
-    - version: 1
-      interp: 0
-      frame: 6
-      easeType: 1
-      amplitude: 0
-      period: 0
-      customEase: []
-      rotation: {x: 0, y: 0, z: 5}
-      endFrame: -1
-      path: []
-    - version: 1
-      interp: 0
-      frame: 11
-      easeType: 1
-      amplitude: 0
-      period: 0
-      customEase: []
-      rotation: {x: -0, y: 0, z: -5}
-      endFrame: -1
-      path: []
-    - version: 1
-      interp: 0
-      frame: 15
-      easeType: 1
-      amplitude: 0
-      period: 0
-      customEase: []
-      rotation: {x: -0, y: 0, z: -5}
-      endFrame: -1
-      path: []
+    _rotationEulerTracks: []
+    _rotationEulerKeys: []
     _rotationTracks: []
     _rotationKeys: []
     _translationTracks:
@@ -1634,7 +1584,7 @@ MonoBehaviour:
       endFrame: 15
       path:
       - {x: 0, y: -325, z: 0}
-      - {x: 370, y: -325, z: 0}
+      - {x: -283, y: -325, z: 0}
       isConstSpeed: 1
     - version: 2
       interp: 0
@@ -1643,7 +1593,7 @@ MonoBehaviour:
       amplitude: 0
       period: 0
       customEase: []
-      position: {x: 370, y: -325, z: 0}
+      position: {x: -283, y: -325, z: 0}
       endFrame: 15
       path: []
       isConstSpeed: 1
@@ -1658,10 +1608,7 @@ MonoBehaviour:
     - type: 10
       index: 1
       keyIndices: 0200000003000000
-    - type: 8
-      index: 0
-      keyIndices: 00000000010000000200000003000000
-    _takeTrackCounts: 0100000002000000
+    _takeTrackCounts: 0100000001000000
 --- !u!1 &1232663565179602299
 GameObject:
   m_ObjectHideFlags: 0
@@ -3258,6 +3205,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -283, y: 0}
   m_SizeDelta: {x: 250, y: 650}
   m_Pivot: {x: 0.5, y: 0.000000020489097}

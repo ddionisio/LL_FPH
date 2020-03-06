@@ -62,9 +62,9 @@ namespace Renegadeware {
                 M8.SoundPlaylist.instance.Play(interactAdjustErrorSound, false);
             else {
                 M8.SoundPlaylist.instance.Play(interactAdjustClickSound, false);
-
-                ApplyDegree(mMoveToDegree - thermometerAdjustIncrement, false);
             }
+
+            ApplyDegree(mMoveToDegree - thermometerAdjustIncrement, true);
         }
 
         public void AdjustRight() {
@@ -72,9 +72,9 @@ namespace Renegadeware {
                 M8.SoundPlaylist.instance.Play(interactAdjustErrorSound, false);
             else {
                 M8.SoundPlaylist.instance.Play(interactAdjustClickSound, false);
-
-                ApplyDegree(mMoveToDegree + thermometerAdjustIncrement, false);
             }
+
+            ApplyDegree(mMoveToDegree + thermometerAdjustIncrement, true);
         }
 
         public void Confirm() {
@@ -85,6 +85,8 @@ namespace Renegadeware {
 
         void OnEnable() {
             mDegreeVel = 0f;
+
+            interactAnimator.ResetTake(interactTakeEnter);
         }
 
         void OnDestroy() {
@@ -136,8 +138,6 @@ namespace Renegadeware {
                 mCurDegree = mMoveToDegree;
                 UpdateThermometerDisplay();
             }
-
-            thermometerDegreeLabel.text = ThermometerCalibrateData.GetDegreeString(currentDegree);
         }
 
         private void UpdateThermometerDisplay() {
@@ -146,6 +146,8 @@ namespace Renegadeware {
             for(int i = 0; i < thermometerPointers.Length; i++) {
                 thermometerPointers[i].SetRotate(t);
             }
+
+            thermometerDegreeLabel.text = ThermometerCalibrateData.GetDegreeString(mCurDegree);
         }
     }
 }
