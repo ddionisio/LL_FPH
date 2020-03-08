@@ -17,6 +17,7 @@
     "intro_1": "intro 1",
     "intro_2": "intro 2",
     "score": "SCORE:",
+    "score_total": "TOTAL SCORE:",
     "instruct_turn_on_faucet": "Press the faucet to begin.",
     "thawing_timer": "Thawing Time",
     "thermometer_calibration": "Thermometer Calibration",
@@ -68,7 +69,7 @@
     "thermometer_broken": "Something is not right with this thermometer, should we proceed to use it?",
     "thermometer_broken0": "Yeah, it's fine.",
     "thermometer_broken1": "No, it's broken.",
-    "thermometer_broken_correct": "That's right, the arrow wasn't moving at all when the thermometer was dipped into the glass of ice. Good call!",
-    "thermometer_broken_wrong": "Wrong! The arrow wasn't moving at all when the thermometer was dipped into the glass of ice."
+    "thermometer_broken_correct": "That's right, the thermometer's arrow didn't move when it was dipped into the glass. Good call!",
+    "thermometer_broken_wrong": "Wrong! The thermometer's arrow didn't move when it was dipped into the glass."
   }
 }

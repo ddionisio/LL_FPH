@@ -80,7 +80,16 @@ namespace LoLExt {
         public int progressMax { get { return _progressMax; } set { _progressMax = value; } }
 
         public int curProgress { get { return mCurProgress; } }
-        public int curScore { get { return mCurScore; } set { mCurScore = value; } }
+        public int curScore { 
+            get { return mCurScore; } 
+            set {
+                if(mCurScore != value) {
+                    mCurScore = value;
+
+                    scoreUpdateCallback?.Invoke(this);
+                }
+            } 
+        }
 
         public bool isQuestionsReceived { get { return mIsQuestionsReceived; } }
 
@@ -127,6 +136,7 @@ namespace LoLExt {
             }
         }
 
+        public event OnCallback scoreUpdateCallback;
         public event OnCallback progressCallback;
         public event OnCallback completeCallback;
         public event OnSpeakCallback speakCallback;
@@ -297,10 +307,11 @@ namespace LoLExt {
 
         public virtual void ApplyProgress(int progress, int score) {
 
-            mCurProgress = Mathf.Clamp(progress, 0, _progressMax);
-            mCurScore = score;
+            mCurProgress = Mathf.Clamp(progress, 0, _progressMax);            
 
             LOLSDK.Instance.SubmitProgress(score, mCurProgress, _progressMax);
+
+            curScore = score;
 
             ProgressCallback();
         }

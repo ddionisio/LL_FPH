@@ -25,7 +25,6 @@ namespace HutongGames.PlayMaker.Actions.LoL {
         private LoLExt.ModalChoiceItemInfo[] mInfos;
 
         private GenericParams mParms = new GenericParams();
-        private int mChoiceSelectedIndex;
         private bool mIsNext;
 
         public override void Reset() {
@@ -63,7 +62,6 @@ namespace HutongGames.PlayMaker.Actions.LoL {
             mParms.Add(LoLExt.ModalChoice.parmStartSelect, startIndex.IsNone ? -1 : startIndex.Value);
             mParms.Add(LoLExt.ModalChoice.parmNextCallback, (System.Action<int>)OnNext);
 
-            mChoiceSelectedIndex = -1;
             mIsNext = false;
 
             ModalManager.main.Open(modal.Value, mParms);
@@ -79,7 +77,9 @@ namespace HutongGames.PlayMaker.Actions.LoL {
         }
 
         void OnNext(int index) {
-            mChoiceSelectedIndex = index;
+            if(!outputChoiceIndex.IsNone)
+                outputChoiceIndex.Value = index;
+
             mIsNext = true;
 
             ModalManager.main.CloseUpTo(modal.Value, true);
