@@ -36,6 +36,19 @@ namespace LoLExt {
         private int mCurChoiceIndex;
         private System.Action<int> mNextCallback;
 
+        public void ShowCorrectChoice(int correctIndex, bool enableConfirm) {
+            //go through and show correct/wrong choices
+
+            if(enableConfirm) {
+                //re-enable confirm
+                if(confirmReadyGO)
+                    confirmReadyGO.SetActive(true);
+
+                if(confirmButton)
+                    confirmButton.interactable = true;
+            }
+        }
+
         public void PlayDialogSpeech() {
             var grpName = name;
             int ind = 0;

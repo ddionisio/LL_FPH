@@ -15,7 +15,10 @@ namespace LoLExt {
         [Header("Display")]
         public Image iconImage;
         public Text label;
+        public GameObject selectGO;
         public GameObject selectedGO;
+        public GameObject correctGO;
+        public GameObject wrongGO;
 
         public event System.Action<int> clickCallback;
 
@@ -58,6 +61,10 @@ namespace LoLExt {
 
             if(label)
                 label.text = M8.Localize.Get(textRef);
+
+            if(selectGO) selectGO.SetActive(true);
+            if(correctGO) correctGO.SetActive(false);
+            if(wrongGO) wrongGO.SetActive(false);
         }
         
         void IPointerClickHandler.OnPointerClick(PointerEventData eventData) {

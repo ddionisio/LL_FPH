@@ -57,6 +57,16 @@ namespace Renegadeware {
         private float mMoveToDegree;
         private float mDegreeVel = 0f;
 
+        public void ApplyDegree(float degree, bool instant) {
+            degree = thermometerDegreeRange.Clamp(degree);
+
+            mMoveToDegree = degree;
+            if(instant) {
+                mCurDegree = mMoveToDegree;
+                UpdateThermometerDisplay();
+            }
+        }
+
         public void AdjustLeft() {
             if(mIsBroken)
                 M8.SoundPlaylist.instance.Play(interactAdjustErrorSound, false);
@@ -80,27 +90,25 @@ namespace Renegadeware {
         public void Confirm() {
             bool isMatch = mMoveToDegree == data.targetDegree;
 
-            signalInvokeConfirm.Invoke(isMatch);
+            if(signalInvokeConfirm) signalInvokeConfirm.Invoke(isMatch);
         }
 
         void OnEnable() {
             mDegreeVel = 0f;
 
-            interactAnimator.ResetTake(interactTakeEnter);
+            if(interactAnimator) interactAnimator.ResetTake(interactTakeEnter);
+
+            if(signalListenSetThermometerDegree) signalListenSetThermometerDegree.callback += OnSetThermometerDegree;
+            if(signalListenMoveThermometerDegree) signalListenMoveThermometerDegree.callback += OnMoveThermometerDegree;
+            if(signalListenInteractSetActive) signalListenInteractSetActive.callback += OnSetInteractActive;
+            if(signalListenSetBroken) signalListenSetBroken.callback += OnSetBroken;
         }
 
-        void OnDestroy() {
-            signalListenSetThermometerDegree.callback -= OnSetThermometerDegree;
-            signalListenMoveThermometerDegree.callback -= OnMoveThermometerDegree;
-            signalListenInteractSetActive.callback -= OnSetInteractActive;
-            signalListenSetBroken.callback -= OnSetBroken;
-        }
-
-        void Awake() {
-            signalListenSetThermometerDegree.callback += OnSetThermometerDegree;
-            signalListenMoveThermometerDegree.callback += OnMoveThermometerDegree;
-            signalListenInteractSetActive.callback += OnSetInteractActive;
-            signalListenSetBroken.callback += OnSetBroken;
+        void OnDisable() {
+            if(signalListenSetThermometerDegree) signalListenSetThermometerDegree.callback -= OnSetThermometerDegree;
+            if(signalListenMoveThermometerDegree) signalListenMoveThermometerDegree.callback -= OnMoveThermometerDegree;
+            if(signalListenInteractSetActive) signalListenInteractSetActive.callback -= OnSetInteractActive;
+            if(signalListenSetBroken) signalListenSetBroken.callback -= OnSetBroken;
         }
 
         void Update() {
@@ -120,24 +128,16 @@ namespace Renegadeware {
         }
 
         void OnSetInteractActive(bool active) {
-            if(active)
-                interactAnimator.Play(interactTakeEnter);
-            else
-                interactAnimator.Play(interactTakeExit);
+            if(interactAnimator) {
+                if(active)
+                    interactAnimator.Play(interactTakeEnter);
+                else
+                    interactAnimator.Play(interactTakeExit);
+            }
         }
 
         void OnSetBroken(bool broken) {
             mIsBroken = broken;
-        }
-
-        private void ApplyDegree(float degree, bool instant) {
-            degree = thermometerDegreeRange.Clamp(degree);
-
-            mMoveToDegree = degree;
-            if(instant) {
-                mCurDegree = mMoveToDegree;
-                UpdateThermometerDisplay();
-            }
         }
 
         private void UpdateThermometerDisplay() {
@@ -147,7 +147,7 @@ namespace Renegadeware {
                 thermometerPointers[i].SetRotate(t);
             }
 
-            thermometerDegreeLabel.text = ThermometerCalibrateData.GetDegreeString(mCurDegree);
+            if(thermometerDegreeLabel) thermometerDegreeLabel.text = ThermometerCalibrateData.GetDegreeString(mCurDegree);
         }
     }
 }
