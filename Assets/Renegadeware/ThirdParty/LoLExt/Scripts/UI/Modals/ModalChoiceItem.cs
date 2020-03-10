@@ -20,7 +20,7 @@ namespace LoLExt {
         public GameObject correctGO;
         public GameObject wrongGO;
 
-        public event System.Action<int> clickCallback;
+        public event System.Action<ModalChoiceItem> clickCallback;
 
         public int index { get; private set; }        
         public bool interactable { 
@@ -71,7 +71,7 @@ namespace LoLExt {
             if(!interactable)
                 return;
 
-            clickCallback?.Invoke(index);
+            clickCallback?.Invoke(this);
         }
     }
 }

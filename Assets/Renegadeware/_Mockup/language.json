@@ -40,6 +40,7 @@
     "food_potato": "Potatoes (Raw)",
     "food_rice_raw": "Rice (Raw)",
     "food_produce": "Produce",
+    "food_beefStew": "Beef Stew",
     "tcsFoodDesc_meats_title": "Meats",
     "tcsFoodDesc_meats": "Bacon - in raw form\nBeef - ground, roasts, steak\nGravy\nGround meats - all\nHot Dogs\nLunch meat\nMeat casseroles\nPork - ground, ham, roasts\nProcessed meats - all\nSausage\nSoups Stews",
     "tcsFoodDesc_poultry_title": "Poultry",
@@ -70,6 +71,9 @@
     "thermometer_broken0": "Yeah, it's fine.",
     "thermometer_broken1": "No, it's broken.",
     "thermometer_broken_correct": "That's right, the thermometer's arrow didn't move when it was dipped into the glass. Good call!",
-    "thermometer_broken_wrong": "Wrong! The thermometer's arrow didn't move when it was dipped into the glass."
+    "thermometer_broken_wrong": "Wrong! The thermometer's arrow didn't move when it was dipped into the glass.",
+    "dangerZoneTrivia1": "A pot of beef stew has been placed in an ice-water bath to cool. After constant stirring, three hours have passed, and the temperature reads 70° F. Is the beef stew ready to be placed into the cooler?",
+    "dangerZoneTrivia10": "No, the temperature didn't reach 70° F before two hours have passed, it should be thrown out.",
+    "dangerZoneTrivia11": "Yes, the stew has reached the proper temperature of 70° F, it should be ready to be placed in the cooler."
   }
 }

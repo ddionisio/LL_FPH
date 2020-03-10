@@ -54,13 +54,11 @@ namespace HutongGames.PlayMaker.Actions.LoL {
 
             mInfos = infoList.ToArray();
 
-            if(isShuffle.Value)
-                ArrayUtil.Shuffle(mInfos);
-
             mParms.Add(LoLExt.ModalChoice.parmDescTextRef, descRef);
             mParms.Add(LoLExt.ModalChoice.parmChoices, mInfos);
             mParms.Add(LoLExt.ModalChoice.parmStartSelect, startIndex.IsNone ? -1 : startIndex.Value);
             mParms.Add(LoLExt.ModalChoice.parmNextCallback, (System.Action<int>)OnNext);
+            mParms.Add(LoLExt.ModalChoice.parmShuffle, isShuffle.Value);
 
             mIsNext = false;
 

@@ -11,6 +11,7 @@ namespace LoLExt {
         public const string parmDescTextRef = "d";
         public const string parmChoices = "c"; //array of ModalChoiceItemInfo
         public const string parmStartSelect = "i";
+        public const string parmShuffle = "s";
         public const string parmNextCallback = "n";
 
         [Header("Display")]        
@@ -33,11 +34,25 @@ namespace LoLExt {
         private string mTitleTextRef;
         private string mDescTextRef;
 
-        private int mCurChoiceIndex;
+        private ModalChoiceItem mCurChoiceItem;
         private System.Action<int> mNextCallback;
 
         public void ShowCorrectChoice(int correctIndex, bool enableConfirm) {
             //go through and show correct/wrong choices
+            for(int i = 0; i < mItemActives.Count; i++) {
+                var itm = mItemActives[i];
+
+                if(itm.index == correctIndex) {
+                    if(itm.correctGO) itm.correctGO.SetActive(true);
+                    if(itm.wrongGO) itm.wrongGO.SetActive(false);
+                }
+                else {
+                    if(itm.correctGO) itm.correctGO.SetActive(false);
+                    if(itm.wrongGO) itm.wrongGO.SetActive(true);
+                }
+
+                if(itm.selectGO) itm.selectGO.SetActive(false);
+            }
 
             if(enableConfirm) {
                 //re-enable confirm
@@ -76,10 +91,10 @@ namespace LoLExt {
                     PlayDialogSpeech();
 
                 if(confirmReadyGO)
-                    confirmReadyGO.SetActive(mCurChoiceIndex != -1);
+                    confirmReadyGO.SetActive(mCurChoiceItem != null);
 
                 if(confirmButton)
-                    confirmButton.interactable = mCurChoiceIndex != -1;
+                    confirmButton.interactable = mCurChoiceItem != null;
             }
             else {
                 if(confirmReadyGO)
@@ -93,7 +108,7 @@ namespace LoLExt {
             //enable/disable choice interactions
             for(int i = 0; i < mItemActives.Count; i++) {
                 if(aActive) {
-                    mItemActives[i].selected = mCurChoiceIndex == i;
+                    mItemActives[i].selected = mItemActives[i] == mCurChoiceItem;
                     mItemActives[i].interactable = true;
                 }
                 else {
@@ -107,6 +122,8 @@ namespace LoLExt {
             if(parms == null)
                 return;
 
+            int startIndex;
+            bool shuffle;
             ModalChoiceItemInfo[] infos;
 
             //grab configuration
@@ -118,17 +135,28 @@ namespace LoLExt {
 
             parms.TryGetValue(parmNextCallback, out mNextCallback);
 
-            mCurChoiceIndex = parms.ContainsKey(parmStartSelect) ? parms.GetValue<int>(parmStartSelect) : -1;
+            parms.TryGetValue(parmShuffle, out shuffle);
+
+            startIndex = parms.ContainsKey(parmStartSelect) ? parms.GetValue<int>(parmStartSelect) : -1;
 
             //setup display
             if(titleLabel) titleLabel.text = !string.IsNullOrEmpty(mTitleTextRef) ? M8.Localize.Get(mTitleTextRef) : "";
 
-            if(descLabel) descLabel.text = !string.IsNullOrEmpty(mDescTextRef) ? M8.Localize.Get(mDescTextRef) : "";
+            if(descLabel) {
+                descLabel.text = !string.IsNullOrEmpty(mDescTextRef) ? M8.Localize.Get(mDescTextRef) : "";
+
+                //resize to fit all of description
+                //TODO: kind of hacky, also make sure not to use "stretch" for label's vertical
+                Canvas.ForceUpdateCanvases();
+                var size = descLabel.rectTransform.sizeDelta;
+                size.y = descLabel.preferredHeight;
+                descLabel.rectTransform.sizeDelta = size;
+            }
 
             //setup choices
             ClearChoices();
             if(infos != null)
-                GenerateChoices(infos);
+                GenerateChoices(infos, startIndex, shuffle);
                         
             //setup confirm
             if(confirmButton)
@@ -139,6 +167,7 @@ namespace LoLExt {
         }
 
         void M8.IModalPop.Pop() {
+            mCurChoiceItem = null;
             mNextCallback = null;
         }
 
@@ -150,20 +179,19 @@ namespace LoLExt {
                 confirmButton.onClick.AddListener(OnConfirmClick);
         }
 
-        void OnChoiceClick(int index) {
+        void OnChoiceClick(ModalChoiceItem item) {
             //update selection
-            if(mCurChoiceIndex != index) {
-                var prevChoiceIndex = mCurChoiceIndex;
-                mCurChoiceIndex = index;
+            var prevChoiceItem = mCurChoiceItem;
+            mCurChoiceItem = item;
 
-                if(prevChoiceIndex != -1)
-                    mItemActives[prevChoiceIndex].selected = false;
+            if(prevChoiceItem)
+                prevChoiceItem.selected = false;
 
-                mItemActives[mCurChoiceIndex].selected = true;
+            if(mCurChoiceItem)
+                mCurChoiceItem.selected = true;
 
-                if(confirmButton && prevChoiceIndex == -1)
-                    confirmButton.interactable = true;
-            }
+            if(confirmButton)
+                confirmButton.interactable = true;
 
             //update confirm
             if(confirmReadyGO)
@@ -180,11 +208,11 @@ namespace LoLExt {
             if(confirmButton)
                 confirmButton.interactable = false;
 
-            if(mCurChoiceIndex != -1)
-                mNextCallback?.Invoke(mCurChoiceIndex);
+            if(mCurChoiceItem)
+                mNextCallback?.Invoke(mCurChoiceItem.index);
         }
 
-        private void GenerateChoices(ModalChoiceItemInfo[] infos) {
+        private void GenerateChoices(ModalChoiceItemInfo[] infos, int startIndex, bool shuffle) {
             if(choiceTemplate) {
                 var choiceRoot = choiceTemplate.transform.parent;
 
@@ -208,6 +236,18 @@ namespace LoLExt {
 
                     mItemActives.Add(itm);
                 }
+
+                if(shuffle) {
+                    mItemActives.Shuffle();
+
+                    for(int i = 0; i < mItemActives.Count; i++) {
+                        var itm = mItemActives[i];
+                        itm.transform.SetAsLastSibling();
+                    }
+                }
+
+                if(startIndex != -1 && startIndex < mItemActives.Count)
+                    mCurChoiceItem = mItemActives[startIndex];
             }
         }
 

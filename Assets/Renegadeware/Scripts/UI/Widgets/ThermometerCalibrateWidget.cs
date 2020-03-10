@@ -54,10 +54,15 @@ namespace Renegadeware {
 
         private bool mIsBroken = false;
         private float mCurDegree;
+        private float mPrevDegree;
         private float mMoveToDegree;
-        private float mDegreeVel = 0f;
+        private DG.Tweening.EaseFunction mMoveEaseFunc;
+
+        private float mMoveStartTime;
 
         public void ApplyDegree(float degree, bool instant) {
+            mPrevDegree = mCurDegree;
+
             degree = thermometerDegreeRange.Clamp(degree);
 
             mMoveToDegree = degree;
@@ -65,6 +70,8 @@ namespace Renegadeware {
                 mCurDegree = mMoveToDegree;
                 UpdateThermometerDisplay();
             }
+            else
+                mMoveStartTime = Time.time;
         }
 
         public void AdjustLeft() {
@@ -94,14 +101,14 @@ namespace Renegadeware {
         }
 
         void OnEnable() {
-            mDegreeVel = 0f;
-
             if(interactAnimator) interactAnimator.ResetTake(interactTakeEnter);
 
             if(signalListenSetThermometerDegree) signalListenSetThermometerDegree.callback += OnSetThermometerDegree;
             if(signalListenMoveThermometerDegree) signalListenMoveThermometerDegree.callback += OnMoveThermometerDegree;
             if(signalListenInteractSetActive) signalListenInteractSetActive.callback += OnSetInteractActive;
             if(signalListenSetBroken) signalListenSetBroken.callback += OnSetBroken;
+
+            mMoveEaseFunc = DG.Tweening.Core.Easing.EaseManager.ToEaseFunction(DG.Tweening.Ease.InOutSine);
         }
 
         void OnDisable() {
@@ -113,7 +120,13 @@ namespace Renegadeware {
 
         void Update() {
             if(mCurDegree != mMoveToDegree) {
-                mCurDegree = Mathf.SmoothDamp(mCurDegree, mMoveToDegree, ref mDegreeVel, thermometerMoveDelay);
+                var time = Time.time - mMoveStartTime;
+                if(time < thermometerMoveDelay) {
+                    var t = mMoveEaseFunc(time, thermometerMoveDelay, 0f, 0f);
+                    mCurDegree = Mathf.Lerp(mPrevDegree, mMoveToDegree, t);
+                }
+                else
+                    mCurDegree = mMoveToDegree;
 
                 UpdateThermometerDisplay();
             }

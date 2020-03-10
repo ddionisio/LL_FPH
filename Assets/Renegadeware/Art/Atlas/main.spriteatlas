@@ -47,7 +47,7 @@ SpriteAtlas:
     - {fileID: 102900000, guid: 8e60b817a4d58c04b8a2e7cb897901c8, type: 3}
     - {fileID: 102900000, guid: c8e4bc67202d72f4a9880e02c884a587, type: 3}
     - {fileID: 102900000, guid: 9d61de809107b0b4a922fe54549f2804, type: 3}
-    totalSpriteSurfaceArea: 746081
+    totalSpriteSurfaceArea: 774881
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -59,6 +59,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 40809691dbc2dfe49a226c0532d62191, type: 3}
   - {fileID: 21300002, guid: 2c182d91a96c3c949bcbade9ea5d4ba4, type: 3}
   - {fileID: 21300000, guid: 2c182d91a96c3c949bcbade9ea5d4ba4, type: 3}
+  - {fileID: 21300000, guid: 768174d15cba27a4685a40309f00d0ea, type: 3}
   - {fileID: 21300000, guid: cfce0ce1b6c72e54f9981e474f39ca7c, type: 3}
   - {fileID: 21300002, guid: bf8c0222be72dfd48a68e5cf2a7ed5c1, type: 3}
   - {fileID: 21300000, guid: bf8c0222be72dfd48a68e5cf2a7ed5c1, type: 3}
@@ -120,6 +121,7 @@ SpriteAtlas:
   - riceRaw
   - tutorialArrow2_bottom
   - tutorialArrow2
+  - beefStew
   - edge_shade_left_8x1
   - shadeWhite_bottomLeft
   - shadeWhite
