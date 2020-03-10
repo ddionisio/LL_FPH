@@ -18,4 +18,24 @@ MonoBehaviour:
     choiceTextBaseRef: dangerZoneTrivia1
     correctIndex: 0
     tempDegree: 70
+  - icon: {fileID: 21300000, guid: 79672301634538f42a44bc85e930dd88, type: 3}
+    titleTextRef: food_bbqPork
+    choiceTextBaseRef: dangerZoneTrivia2
+    correctIndex: 0
+    tempDegree: 165
+  - icon: {fileID: 21300000, guid: 6dc6bea406d403f44b698e79dd25836c, type: 3}
+    titleTextRef: food_bbqChicken
+    choiceTextBaseRef: dangerZoneTrivia3
+    correctIndex: 0
+    tempDegree: 127
+  - icon: {fileID: 21300000, guid: fec574fdb137cec4d9cea3e253067bfc, type: 3}
+    titleTextRef: food_broccoliSalad
+    choiceTextBaseRef: dangerZoneTrivia4
+    correctIndex: 0
+    tempDegree: 40
+  - icon: {fileID: 21300000, guid: 99172ad7863babf4095e2156a3b10e86, type: 3}
+    titleTextRef: food_yogurtBar
+    choiceTextBaseRef: dangerZoneTrivia5
+    correctIndex: 0
+    tempDegree: 53
   scorePerItem: 500
