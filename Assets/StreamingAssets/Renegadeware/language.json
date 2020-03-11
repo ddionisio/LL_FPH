@@ -14,8 +14,6 @@
     "confirm": "CONFIRM",
     "tcs_foods": "TCS Foods\n(Time/Temperature Control for Safety)",
     "non_tcs_foods": "Non-TCS Foods",
-    "intro_1": "intro 1",
-    "intro_2": "intro 2",
     "score": "SCORE:",
     "score_total": "TOTAL SCORE:",
     "instruct_turn_on_faucet": "Press the faucet to begin.",
@@ -92,6 +90,12 @@
     "dangerZoneTrivia42": "It's too cold, they need to be heated up in a microwave.",
     "dangerZoneTrivia5": "A server was requested to check on the yogurt batch being served at the yogurt bar. After checking the temperature, it reads 53° F. Looking at the time it was brought out, it's been several hours.",
     "dangerZoneTrivia50": "This batch needs to be replaced.",
-    "dangerZoneTrivia51": "The temperature is fine, leave it as is."
+    "dangerZoneTrivia51": "The temperature is fine, leave it as is.",
+    "intro_1": "Hello! I’m here to talk to you about the various safety procedures involved in food preparation.",
+    "intro_2": "First off, let’s talk about personal hygiene!",
+    "intro_3": "One of the most important steps before handling food is washing your hands.",
+    "intro_4": "Remember to always wash your hands after using the restroom, before switching prep assignments, or before putting on disposable gloves.",
+    "washHands_1": "Wash your hands with soap and warm water for a minimum of 20 seconds.",
+    "washHands_2": "Do not handle food if you have a skin infection, or a cut on your hand."
   }
 }

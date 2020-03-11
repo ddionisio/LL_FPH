@@ -47,7 +47,7 @@ SpriteAtlas:
     - {fileID: 102900000, guid: 8e60b817a4d58c04b8a2e7cb897901c8, type: 3}
     - {fileID: 102900000, guid: c8e4bc67202d72f4a9880e02c884a587, type: 3}
     - {fileID: 102900000, guid: 9d61de809107b0b4a922fe54549f2804, type: 3}
-    totalSpriteSurfaceArea: 890081
+    totalSpriteSurfaceArea: 922849
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -75,7 +75,9 @@ SpriteAtlas:
   - {fileID: 21300000, guid: d985b654a2dd4e54482f774cec3f7b9c, type: 3}
   - {fileID: 21300000, guid: 1a2b6884301574a47aa7daf6a8807b6b, type: 3}
   - {fileID: 21300000, guid: 6dc6bea406d403f44b698e79dd25836c, type: 3}
+  - {fileID: 21300000, guid: 484226e44bc5ad147b983a50be09a748, type: 3}
   - {fileID: 21300000, guid: 21c769e4040edd24e83c0830fb109b60, type: 3}
+  - {fileID: 21300000, guid: 684684f4c079cba429887218cb3cff14, type: 3}
   - {fileID: 21300000, guid: 4f3fdd0562f3b55479372ed4fa740f1f, type: 3}
   - {fileID: 21300000, guid: e9c8ee955c09c344aa79e9bb93b94216, type: 3}
   - {fileID: 21300000, guid: ffac66f6e90bc1143957585918629f35, type: 3}
@@ -141,7 +143,9 @@ SpriteAtlas:
   - circleGlow
   - mayonnaise
   - bbqChicken
+  - handInjured
   - explodePixel5
+  - washHands
   - cannedGoods
   - outline1x1
   - bread
