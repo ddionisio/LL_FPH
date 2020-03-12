@@ -120,13 +120,7 @@ namespace LoLExt {
             }
         }
 
-        public void Next() {
-            if(mIsNextProcessed)
-                return;
-
-            if(!mIsActive)
-                return;
-
+        public void SkipTextProcess() {
             if(mTextProcessRout != null) { //finish up text process, need to click next one more time
                 if(Time.time - mLastActiveTime < nextDelay)
                     return;
@@ -136,7 +130,18 @@ namespace LoLExt {
 
                 if(textProcessActiveGO) textProcessActiveGO.SetActive(false);
                 if(textProcessFinishGO) textProcessFinishGO.SetActive(true);
+            }
+        }
 
+        public void Next() {
+            if(mIsNextProcessed)
+                return;
+
+            if(!mIsActive)
+                return;
+
+            if(mTextProcessRout != null) { //finish up text process, need to click next one more time
+                SkipTextProcess();
                 return;
             }
 
