@@ -96,6 +96,17 @@
     "intro_3": "One of the most important steps before handling food is washing your hands.",
     "intro_4": "Remember to always wash your hands after using the restroom, before switching prep assignments, or before putting on disposable gloves.",
     "washHands_1": "Wash your hands with soap and warm water for a minimum of 20 seconds.",
-    "washHands_2": "Do not handle food if you have a skin infection, or a cut on your hand."
+    "washHands_2": "Do not handle food if you have a skin infection, or a cut on your hand.",
+    "sanitary_1": "Alright, looks like the other servers have arrived.",
+    "sanitary_2": "They'll be heading out to their stations now.",
+    "sanitary_other_1": "I don't feel so good…",
+    "sanitaryInteract": "Uh oh, she appears to be sick. What's the best course of action?",
+    "sanitaryInteract0": "She seems functional enough to get to work, she should be fine.",
+    "sanitaryInteract1": "Let her wear a face mask to avoid contamination.",
+    "sanitaryInteract2": "She should take her leave for the day.",
+    "sanitaryInteractResult0": "No way! She needs to take her leave for the day!",
+    "sanitaryInteractResult1": "Wearing a face mask is not enough! She shouldn't be here today!",
+    "sanitaryInteractResult2": "That's correct, any employee suffering from respiratory or intestinal illness should not work their scheduled shift.",
+    "sanitaryEnd_1": "Alright, we are good to go! Let's go ahead and start prepping the food we need for the day."
   }
 }

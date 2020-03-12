@@ -12739,7 +12739,7 @@ RectTransform:
   - {fileID: 1356523638}
   - {fileID: 1719481721}
   m_Father: {fileID: 1749415146}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -13349,91 +13349,6 @@ MonoBehaviour:
   takeEnter: enter
   takeExit: exit
   resetOnEnable: 1
---- !u!21 &280118240
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Shapes2D Material
-  m_Shader: {fileID: 4800000, guid: 44f74e30da9814584b2fdcdbe799e51a, type: 3}
-  m_ShaderKeywords: FILL_SOLID_COLOR SIMPLE_ELLIPSE _EMISSION
-  m_LightmapFlags: 1
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _BumpScale: 1
-    - _ColorMask: 15
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _Shapes2D_DstAlpha: 1
-    - _Shapes2D_DstBlend: 10
-    - _Shapes2D_SrcAlpha: 1
-    - _Shapes2D_SrcBlend: 1
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UVSec: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1001 &280123644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16527,14 +16442,19 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
+        - HutongGames.PlayMaker.Actions.Game.GetSanitationScore
         - HutongGames.PlayMaker.Actions.GetMainCamera
+        - HutongGames.PlayMaker.Actions.ActivateGameObject
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 5c004505
-        unityObjectParams: []
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000200000003000000
+        actionHashCodes: d2da60045c004505b2cf1000
+        unityObjectParams:
+        - {fileID: 11400000, guid: 87cfe3712554e8b4d8bd3e40c0e582fd, type: 2}
         fsmGameObjectParams:
         - useVariable: 1
           name: cameraGO
@@ -16542,7 +16462,131 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: {fileID: 0}
-        fsmOwnerDefaultParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: otherServersGO
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 1707911228}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams:
+        - useVariable: 1
+          name: sanitationScore
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 0000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 0500000010000000130000001400000011000000110000000100000001000000
+        paramName:
+        - data
+        - output
+        - storeGameObject
+        - gameObject
+        - activate
+        - recursive
+        - resetOnExit
+        - everyFrame
+        paramDataPos: 0000000000000000000000000000000000000000010000000000000001000000
+        paramByteDataSize: 0000000000000000000000000000000000000000000000000100000001000000
+    - name: Enter
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 210
+        y: 278
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 1
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Dialog 1
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.ActivateGameObject
+        - HutongGames.PlayMaker.Actions.Game.ExpressionGOActiveSet
+        - HutongGames.PlayMaker.Actions.LoL.AnimatorEnter
+        customNames:
+        - 
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000500000007000000
+        actionHashCodes: b2cf1000505554038d4bb503
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: characterServerGO
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 1232663564668964866}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: characterServerGO
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 1232663564668964866}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: characterServerGO
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 1232663564668964866}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
@@ -16556,125 +16600,6 @@ MonoBehaviour:
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams: []
-        fsmBoolParams: []
-        fsmVector2Params: []
-        fsmVector3Params: []
-        fsmColorParams: []
-        fsmRectParams: []
-        fsmQuaternionParams: []
-        stringParams: []
-        byteData: 
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 13000000
-        paramName:
-        - storeGameObject
-        paramDataPos: 00000000
-        paramByteDataSize: 00000000
-    - name: Enter
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 214
-        y: 224
-        width: 100
-        height: 32
-      isBreakpoint: 0
-      isSequence: 1
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FINISHED
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: Exit
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - HutongGames.PlayMaker.Actions.Game.LookAtGoto
-        - HutongGames.PlayMaker.Actions.ActivateGameObject
-        - HutongGames.PlayMaker.Actions.Game.ExpressionGOActiveSet
-        - HutongGames.PlayMaker.Actions.LoL.AnimatorEnter
-        customNames:
-        - 
-        - 
-        - 
-        - 
-        actionEnabled: 01010101
-        actionIsOpen: 01010101
-        actionStartIndex: 00000000060000000b0000000d000000
-        actionHashCodes: c21fd805b2cf1000505554038d4bb503
-        unityObjectParams: []
-        fsmGameObjectParams:
-        - useVariable: 1
-          name: cameraGO
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: {fileID: 0}
-        fsmOwnerDefaultParams:
-        - ownerOption: 1
-          gameObject:
-            useVariable: 1
-            name: cameraPointsGO
-            tooltip: 
-            showInInspector: 1
-            networkSync: 0
-            value: {fileID: 1387800042}
-        - ownerOption: 1
-          gameObject:
-            useVariable: 1
-            name: characterServerGO
-            tooltip: 
-            showInInspector: 1
-            networkSync: 0
-            value: {fileID: 1232663564668964866}
-        - ownerOption: 1
-          gameObject:
-            useVariable: 1
-            name: characterServerGO
-            tooltip: 
-            showInInspector: 1
-            networkSync: 0
-            value: {fileID: 1232663564668964866}
-        - ownerOption: 1
-          gameObject:
-            useVariable: 1
-            name: characterServerGO
-            tooltip: 
-            showInInspector: 1
-            networkSync: 0
-            value: {fileID: 1232663564668964866}
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: sanitation
-        fsmObjectParams: []
-        fsmVarParams: []
-        fsmArrayParams: []
-        fsmEnumParams: []
-        fsmFloatParams:
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        fsmIntParams: []
         fsmBoolParams:
         - useVariable: 0
           name: 
@@ -16687,12 +16612,6 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 1
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
           value: 0
         fsmVector2Params: []
         fsmVector3Params: []
@@ -16700,19 +16619,13 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
-        byteData: 0000000000000e000000
+        byteData: 00000e000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 140000001300000012000000070000000f000000110000001400000011000000110000000100000001000000140000000700000014000000
+        paramDataType: 1400000011000000110000000100000001000000140000000700000014000000
         paramName:
-        - gameObject
-        - target
-        - pointName
-        - ease
-        - delay
-        - isWait
         - gameObject
         - activate
         - recursive
@@ -16721,15 +16634,15 @@ MonoBehaviour:
         - gameObject
         - expression
         - gameObject
-        paramDataPos: 0000000000000000000000000000000000000000000000000100000001000000020000000400000005000000020000000600000003000000
-        paramByteDataSize: 0000000000000000000000000400000000000000000000000000000000000000000000000100000001000000000000000400000000000000
+        paramDataPos: 0000000000000000010000000000000001000000010000000200000002000000
+        paramByteDataSize: 0000000000000000000000000100000001000000000000000400000000000000
     - name: Complete
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 686.0078
-        y: 392
+        x: 1260.0078
+        y: 640
         width: 100
         height: 16
       isBreakpoint: 0
@@ -16804,7 +16717,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: Enter
+        toState: Camera Move
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -16864,48 +16777,34 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 221
-        y: 320
+        x: 348
+        y: 332
         width: 100
-        height: 16
+        height: 32
       isBreakpoint: 0
       isSequence: 1
       hideUnused: 0
-      transitions: []
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Other Servers Leave
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
       actionData:
         actionNames:
-        - HutongGames.PlayMaker.Actions.Game.ExpressionGOActiveSet
-        - HutongGames.PlayMaker.Actions.LoL.DialogOpen
-        - HutongGames.PlayMaker.Actions.Game.ExpressionGOActiveSet
         - HutongGames.PlayMaker.Actions.LoL.DialogOpen
         customNames:
         - 
-        - 
-        - 
-        - 
-        actionEnabled: 01010101
-        actionIsOpen: 01010101
-        actionStartIndex: 00000000020000000e00000010000000
-        actionHashCodes: 505554033a9a6105505554033a9a6105
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 3a9a6105
         unityObjectParams: []
         fsmGameObjectParams: []
-        fsmOwnerDefaultParams:
-        - ownerOption: 1
-          gameObject:
-            useVariable: 1
-            name: characterServerGO
-            tooltip: 
-            showInInspector: 1
-            networkSync: 0
-            value: {fileID: 1232663564668964866}
-        - ownerOption: 1
-          gameObject:
-            useVariable: 1
-            name: characterServerGO
-            tooltip: 
-            showInInspector: 1
-            networkSync: 0
-            value: {fileID: 1232663564668964866}
+        fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
@@ -16930,33 +16829,14 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: intro_1
+          value: sanitary_1
         - useVariable: 0
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: dialog
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: intro_2
+          value: sanitary_2
         fsmObjectParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          typeName: UnityEngine.Sprite
-          value: {fileID: 0}
         - useVariable: 0
           name: 
           tooltip: 
@@ -16981,24 +16861,6 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 0
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 0
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
           value: 1
         - useVariable: 0
           name: 
@@ -17012,21 +16874,17 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
-        byteData: 080000000000000000000000130000000000000000000000
-        arrayParamSizes: 0100000001000000
+        byteData: 000000000000000000000000
+        arrayParamSizes: 02000000
         arrayParamTypes:
         - HutongGames.PlayMaker.Actions.M8.FsmLocalize
-        - HutongGames.PlayMaker.Actions.M8.FsmLocalize
-        customTypeSizes: 02000000020000000200000002000000
+        customTypeSizes: 020000000200000002000000
         customTypeNames:
         - HutongGames.PlayMaker.Actions.M8.FsmLocalize
         - HutongGames.PlayMaker.Actions.M8.FsmLocalize
         - HutongGames.PlayMaker.Actions.M8.FsmLocalize
-        - HutongGames.PlayMaker.Actions.M8.FsmLocalize
-        paramDataType: 14000000070000001200000018000000110000002800000007000000120000000c000000280000000700000012000000110000001100000014000000070000001200000018000000110000002800000007000000120000000c0000002800000007000000120000001100000011000000
+        paramDataType: 1200000018000000110000002800000007000000120000000c0000002800000007000000120000002800000007000000120000001100000011000000
         paramName:
-        - gameObject
-        - expression
         - modal
         - portrait
         - usePortrait
@@ -17037,31 +16895,20 @@ MonoBehaviour:
         - 
         - from
         - stringRef
-        - closeOnEnd
-        - clearModals
-        - gameObject
-        - expression
-        - modal
-        - portrait
-        - usePortrait
-        - nameText
-        - from
-        - stringRef
-        - dialogTexts
         - 
         - from
         - stringRef
         - closeOnEnd
         - clearModals
-        paramDataPos: 0000000000000000000000000000000000000000000000000400000001000000000000000100000008000000020000000100000002000000010000000c000000030000000100000003000000020000001000000004000000010000000300000014000000050000000400000005000000
-        paramByteDataSize: 00000000040000000000000000000000000000000000000004000000000000000000000000000000040000000000000000000000000000000000000004000000000000000000000000000000000000000400000000000000000000000000000004000000000000000000000000000000
+        paramDataPos: 000000000000000000000000000000000000000001000000000000000100000004000000020000000200000008000000030000000100000002000000
+        paramByteDataSize: 000000000000000000000000000000000400000000000000000000000000000004000000000000000000000004000000000000000000000000000000
     - name: Exit
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 509
-        y: 342
+        x: 1083
+        y: 590
         width: 100
         height: 32
       isBreakpoint: 0
@@ -17078,28 +16925,18 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
-        - HutongGames.PlayMaker.Actions.Game.ExpressionGOActiveSet
         - HutongGames.PlayMaker.Actions.LoL.AnimatorExit
         - HutongGames.PlayMaker.Actions.ActivateGameObject
         customNames:
         - 
         - 
-        - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000200000003000000
-        actionHashCodes: 505554038d4bb503b2cf1000
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000001000000
+        actionHashCodes: 8d4bb503b2cf1000
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
-        - ownerOption: 1
-          gameObject:
-            useVariable: 1
-            name: characterServerGO
-            tooltip: 
-            showInInspector: 1
-            networkSync: 0
-            value: {fileID: 1232663564668964866}
         - ownerOption: 1
           gameObject:
             useVariable: 1
@@ -17148,26 +16985,1372 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
-        byteData: 0e0000000000
+        byteData: 0000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1400000007000000140000001400000011000000110000000100000001000000
+        paramDataType: 140000001400000011000000110000000100000001000000
         paramName:
-        - gameObject
-        - expression
         - gameObject
         - gameObject
         - activate
         - recursive
         - resetOnExit
         - everyFrame
-        paramDataPos: 0000000000000000010000000200000000000000010000000400000005000000
-        paramByteDataSize: 0000000004000000000000000000000000000000000000000100000001000000
+        paramDataPos: 000000000100000000000000010000000000000001000000
+        paramByteDataSize: 000000000000000000000000000000000100000001000000
+    - name: Camera Move
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 215
+        y: 160
+        width: 120
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Other Servers Enter
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.Game.LookAtGoto
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: c21fd805
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: cameraGO
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: cameraPointsGO
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 1387800042}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: sanitation
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 00000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 140000001300000012000000070000000f00000011000000
+        paramName:
+        - gameObject
+        - target
+        - pointName
+        - ease
+        - delay
+        - isWait
+        paramDataPos: 000000000000000000000000000000000000000000000000
+        paramByteDataSize: 000000000000000000000000040000000000000000000000
+    - name: Other Servers Enter
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 211
+        y: 217
+        width: 163
+        height: 32
+      isBreakpoint: 0
+      isSequence: 1
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Enter
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.ActivateGameObject
+        - HutongGames.PlayMaker.Actions.M8.Animator.PlayTake
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000005000000
+        actionHashCodes: b2cf1000b5dd2101
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: otherServersGO
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 1707911228}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: otherServersGO
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 1707911228}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: enter
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 0000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 140000001100000011000000010000000100000012000000110000000f000000110000001100000014000000
+        paramName:
+        - gameObject
+        - activate
+        - recursive
+        - resetOnExit
+        - everyFrame
+        - take
+        - loop
+        - startAt
+        - startAtIsFrame
+        - waitFinish
+        - gameObject
+        paramDataPos: 0000000000000000010000000000000001000000000000000200000000000000030000000400000001000000
+        paramByteDataSize: 0000000000000000000000000100000001000000000000000000000000000000000000000000000000000000
+    - name: Other Servers Leave
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 343.5
+        y: 387
+        width: 168
+        height: 32
+      isBreakpoint: 0
+      isSequence: 1
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Sick Focus
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.M8.Animator.PlayTake
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: b5dd2101
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: otherServersGO
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 1707911228}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: othersLeave
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 12000000110000000f000000110000001100000014000000
+        paramName:
+        - take
+        - loop
+        - startAt
+        - startAtIsFrame
+        - waitFinish
+        - gameObject
+        paramDataPos: 000000000000000000000000010000000200000000000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000
+    - name: Sick Focus
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 341.5
+        y: 443
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 1
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Question
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.Wait
+        - HutongGames.PlayMaker.Actions.M8.Animator.PlayTake
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000003000000
+        actionHashCodes: 48c01101b5dd2101
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: otherServersGO
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 1707911228}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: sickFocus
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0.5
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - 
+        byteData: 00
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 0f000000170000000100000012000000110000000f000000110000001100000014000000
+        paramName:
+        - time
+        - finishEvent
+        - realTime
+        - take
+        - loop
+        - startAt
+        - startAtIsFrame
+        - waitFinish
+        - gameObject
+        paramDataPos: 000000000000000000000000000000000000000001000000010000000200000000000000
+        paramByteDataSize: 000000000000000001000000000000000000000000000000000000000000000000000000
+    - name: Question
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 338
+        y: 507
+        width: 107
+        height: 64
+      isBreakpoint: 0
+      isSequence: 1
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: ANSWER_0
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Answer 0
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: ANSWER_1
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Answer 1
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: ANSWER_2
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Answer 2
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.LoL.ModalDialogChoiceSimple
+        - HutongGames.PlayMaker.Actions.IntSwitch
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000007000000
+        actionHashCodes: e3ef7502092dca00
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 1
+          name: modalDialogChoice
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: dialogChoice
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: sanitaryInteract
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: -1
+        - useVariable: 1
+          name: answerInd
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: answerInd
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 2
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - ANSWER_0
+        - ANSWER_1
+        - ANSWER_2
+        byteData: 0000000000
+        arrayParamSizes: 0300000003000000
+        arrayParamTypes:
+        - HutongGames.PlayMaker.FsmInt
+        - HutongGames.PlayMaker.FsmEvent
+        customTypeSizes: 02000000
+        customTypeNames:
+        - HutongGames.PlayMaker.Actions.M8.FsmLocalize
+        paramDataType: 12000000280000000700000012000000100000001100000010000000100000000c0000001000000010000000100000000c00000017000000170000001700000001000000
+        paramName:
+        - modal
+        - descTextRef
+        - from
+        - stringRef
+        - startIndex
+        - isShuffle
+        - outputChoiceIndex
+        - intVariable
+        - compareTo
+        - 
+        - 
+        - 
+        - sendEvent
+        - 
+        - 
+        - 
+        - everyFrame
+        paramDataPos: 0000000000000000000000000100000000000000000000000100000002000000000000000300000004000000050000000100000000000000010000000200000004000000
+        paramByteDataSize: 0000000000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000
+    - name: Answer 0
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 538
+        y: 483
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 1
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Sick Leave
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.Game.ExpressionGOActiveSet
+        - HutongGames.PlayMaker.Actions.LoL.DialogOpen
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000002000000
+        actionHashCodes: 505554033a9a6105
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: characterServerGO
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 1232663564668964866}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: dialog
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: sanitaryInteractResult0
+        fsmObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: UnityEngine.Sprite
+          value: {fileID: 0}
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 060000000000000000000000
+        arrayParamSizes: 01000000
+        arrayParamTypes:
+        - HutongGames.PlayMaker.Actions.M8.FsmLocalize
+        customTypeSizes: 0200000002000000
+        customTypeNames:
+        - HutongGames.PlayMaker.Actions.M8.FsmLocalize
+        - HutongGames.PlayMaker.Actions.M8.FsmLocalize
+        paramDataType: 14000000070000001200000018000000110000002800000007000000120000000c0000002800000007000000120000001100000011000000
+        paramName:
+        - gameObject
+        - expression
+        - modal
+        - portrait
+        - usePortrait
+        - nameText
+        - from
+        - stringRef
+        - dialogTexts
+        - 
+        - from
+        - stringRef
+        - closeOnEnd
+        - clearModals
+        paramDataPos: 0000000000000000000000000000000000000000000000000400000001000000000000000100000008000000020000000100000002000000
+        paramByteDataSize: 0000000004000000000000000000000000000000000000000400000000000000000000000000000004000000000000000000000000000000
+    - name: Sick Leave
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 746.5
+        y: 545
+        width: 102
+        height: 32
+      isBreakpoint: 0
+      isSequence: 1
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Dialog End
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.LoL.AnimatorExit
+        - HutongGames.PlayMaker.Actions.LoL.DialogOpen
+        - HutongGames.PlayMaker.Actions.M8.Animator.PlayTake
+        customNames:
+        - 
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 00000000010000000d000000
+        actionHashCodes: 8d4bb5033a9a6105b5dd2101
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: characterServerGO
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 1232663564668964866}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: otherServersGO
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 1707911228}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: dialog
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: sanitary_other_1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: sickLeave
+        fsmObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: UnityEngine.Sprite
+          value: {fileID: 0}
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 0000000000000000
+        arrayParamSizes: 01000000
+        arrayParamTypes:
+        - HutongGames.PlayMaker.Actions.M8.FsmLocalize
+        customTypeSizes: 0200000002000000
+        customTypeNames:
+        - HutongGames.PlayMaker.Actions.M8.FsmLocalize
+        - HutongGames.PlayMaker.Actions.M8.FsmLocalize
+        paramDataType: 140000001200000018000000110000002800000007000000120000000c000000280000000700000012000000110000001100000012000000110000000f000000110000001100000014000000
+        paramName:
+        - gameObject
+        - modal
+        - portrait
+        - usePortrait
+        - nameText
+        - from
+        - stringRef
+        - dialogTexts
+        - 
+        - from
+        - stringRef
+        - closeOnEnd
+        - clearModals
+        - take
+        - loop
+        - startAt
+        - startAtIsFrame
+        - waitFinish
+        - gameObject
+        paramDataPos: 00000000000000000000000000000000000000000000000001000000000000000100000004000000020000000100000002000000030000000300000000000000040000000500000001000000
+        paramByteDataSize: 00000000000000000000000000000000000000000400000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000
+    - name: Answer 1
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 539.5
+        y: 543
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 1
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Sick Leave
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.Game.ExpressionGOActiveSet
+        - HutongGames.PlayMaker.Actions.LoL.DialogOpen
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000002000000
+        actionHashCodes: 505554033a9a6105
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: characterServerGO
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 1232663564668964866}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: dialog
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: sanitaryInteractResult1
+        fsmObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: UnityEngine.Sprite
+          value: {fileID: 0}
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 100000000000000000000000
+        arrayParamSizes: 01000000
+        arrayParamTypes:
+        - HutongGames.PlayMaker.Actions.M8.FsmLocalize
+        customTypeSizes: 0200000002000000
+        customTypeNames:
+        - HutongGames.PlayMaker.Actions.M8.FsmLocalize
+        - HutongGames.PlayMaker.Actions.M8.FsmLocalize
+        paramDataType: 14000000070000001200000018000000110000002800000007000000120000000c0000002800000007000000120000001100000011000000
+        paramName:
+        - gameObject
+        - expression
+        - modal
+        - portrait
+        - usePortrait
+        - nameText
+        - from
+        - stringRef
+        - dialogTexts
+        - 
+        - from
+        - stringRef
+        - closeOnEnd
+        - clearModals
+        paramDataPos: 0000000000000000000000000000000000000000000000000400000001000000000000000100000008000000020000000100000002000000
+        paramByteDataSize: 0000000004000000000000000000000000000000000000000400000000000000000000000000000004000000000000000000000000000000
+    - name: Answer 2
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 540.5
+        y: 596
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 1
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Sick Leave
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.LoL.LoLAddScore
+        - HutongGames.PlayMaker.Actions.Game.ExpressionGOActiveSet
+        - HutongGames.PlayMaker.Actions.LoL.DialogOpen
+        customNames:
+        - 
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000100000003000000
+        actionHashCodes: dcbe4804505554033a9a6105
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: characterServerGO
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 1232663564668964866}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: dialog
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: sanitaryInteractResult2
+        fsmObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: UnityEngine.Sprite
+          value: {fileID: 0}
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams:
+        - useVariable: 1
+          name: sanitationScore
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 0d0000000000000000000000
+        arrayParamSizes: 01000000
+        arrayParamTypes:
+        - HutongGames.PlayMaker.Actions.M8.FsmLocalize
+        customTypeSizes: 0200000002000000
+        customTypeNames:
+        - HutongGames.PlayMaker.Actions.M8.FsmLocalize
+        - HutongGames.PlayMaker.Actions.M8.FsmLocalize
+        paramDataType: 1000000014000000070000001200000018000000110000002800000007000000120000000c0000002800000007000000120000001100000011000000
+        paramName:
+        - score
+        - gameObject
+        - expression
+        - modal
+        - portrait
+        - usePortrait
+        - nameText
+        - from
+        - stringRef
+        - dialogTexts
+        - 
+        - from
+        - stringRef
+        - closeOnEnd
+        - clearModals
+        paramDataPos: 000000000000000000000000000000000000000000000000000000000400000001000000000000000100000008000000020000000100000002000000
+        paramByteDataSize: 000000000000000004000000000000000000000000000000000000000400000000000000000000000000000004000000000000000000000000000000
+    - name: Dialog End
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 915.5
+        y: 551
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 1
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Exit
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.Game.ExpressionGOActiveSet
+        - HutongGames.PlayMaker.Actions.LoL.AnimatorEnter
+        - HutongGames.PlayMaker.Actions.LoL.DialogOpen
+        customNames:
+        - 
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000200000003000000
+        actionHashCodes: 505554038d4bb5033a9a6105
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: characterServerGO
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 1232663564668964866}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: characterServerGO
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 1232663564668964866}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: dialog
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: sanitaryEnd_1
+        fsmObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: UnityEngine.Sprite
+          value: {fileID: 0}
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams: []
+        byteData: 0e0000000000000000000000
+        arrayParamSizes: 01000000
+        arrayParamTypes:
+        - HutongGames.PlayMaker.Actions.M8.FsmLocalize
+        customTypeSizes: 0200000002000000
+        customTypeNames:
+        - HutongGames.PlayMaker.Actions.M8.FsmLocalize
+        - HutongGames.PlayMaker.Actions.M8.FsmLocalize
+        paramDataType: 1400000007000000140000001200000018000000110000002800000007000000120000000c0000002800000007000000120000001100000011000000
+        paramName:
+        - gameObject
+        - expression
+        - gameObject
+        - modal
+        - portrait
+        - usePortrait
+        - nameText
+        - from
+        - stringRef
+        - dialogTexts
+        - 
+        - from
+        - stringRef
+        - closeOnEnd
+        - clearModals
+        paramDataPos: 000000000000000001000000000000000000000000000000000000000400000001000000000000000100000008000000020000000100000002000000
+        paramByteDataSize: 000000000400000000000000000000000000000000000000000000000400000000000000000000000000000004000000000000000000000000000000
     events:
     - name: FINISHED
       isSystemEvent: 1
+      isGlobal: 0
+    - name: ANSWER_0
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: ANSWER_1
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: ANSWER_2
+      isSystemEvent: 0
       isGlobal: 0
     - name: INTRO
       isSystemEvent: 0
@@ -17178,7 +18361,19 @@ MonoBehaviour:
     globalTransitions: []
     variables:
       floatVariables: []
-      intVariables: []
+      intVariables:
+      - useVariable: 1
+        name: sanitationScore
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
+      - useVariable: 1
+        name: answerInd
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
       boolVariables: []
       stringVariables: []
       vector2Variables: []
@@ -17205,6 +18400,12 @@ MonoBehaviour:
         showInInspector: 0
         networkSync: 0
         value: {fileID: 0}
+      - useVariable: 1
+        name: otherServersGO
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 1707911228}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -17212,7 +18413,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 000000000000000000000000
+      variableCategoryIDs: 000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -18544,91 +19745,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 557492602}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &563311779
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Shapes2D Material
-  m_Shader: {fileID: 4800000, guid: 44f74e30da9814584b2fdcdbe799e51a, type: 3}
-  m_ShaderKeywords: FILL_SOLID_COLOR RECTANGLE _EMISSION
-  m_LightmapFlags: 1
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _BumpScale: 1
-    - _ColorMask: 15
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _Shapes2D_DstAlpha: 1
-    - _Shapes2D_DstBlend: 10
-    - _Shapes2D_SrcAlpha: 1
-    - _Shapes2D_SrcBlend: 1
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UVSec: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &579749595
 GameObject:
   m_ObjectHideFlags: 0
@@ -18756,91 +19872,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 128}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!21 &602392437
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Shapes2D Material
-  m_Shader: {fileID: 4800000, guid: 44f74e30da9814584b2fdcdbe799e51a, type: 3}
-  m_ShaderKeywords: FILL_SOLID_COLOR SIMPLE_ELLIPSE _EMISSION
-  m_LightmapFlags: 1
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _BumpScale: 1
-    - _ColorMask: 15
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _Shapes2D_DstAlpha: 1
-    - _Shapes2D_DstBlend: 10
-    - _Shapes2D_SrcAlpha: 1
-    - _Shapes2D_SrcBlend: 1
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UVSec: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &614216084
 GameObject:
   m_ObjectHideFlags: 0
@@ -19428,6 +20459,79 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+--- !u!1 &655470419
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 655470420}
+  - component: {fileID: 655470422}
+  - component: {fileID: 655470421}
+  m_Layer: 5
+  m_Name: other2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &655470420
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655470419}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1707911229}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -211, y: 177}
+  m_SizeDelta: {x: 640, y: 900}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &655470421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655470419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 8134fe5d0c277b948a0d8634088171fd, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &655470422
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655470419}
+  m_CullTransparentMesh: 0
 --- !u!1 &658665803
 GameObject:
   m_ObjectHideFlags: 0
@@ -21080,6 +22184,79 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 804278167}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &813663552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 813663553}
+  - component: {fileID: 813663555}
+  - component: {fileID: 813663554}
+  m_Layer: 5
+  m_Name: other1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &813663553
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813663552}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1707911229}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -325, y: 177}
+  m_SizeDelta: {x: 640, y: 900}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &813663554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813663552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 66db5a55994e3ce4eb97ba5486993fe1, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &813663555
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813663552}
+  m_CullTransparentMesh: 0
 --- !u!1 &829401226
 GameObject:
   m_ObjectHideFlags: 0
@@ -26079,91 +27256,6 @@ Transform:
   m_Father: {fileID: 1387800044}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: -144.37001, z: 0}
---- !u!21 &1014637007
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Shapes2D Material
-  m_Shader: {fileID: 4800000, guid: 44f74e30da9814584b2fdcdbe799e51a, type: 3}
-  m_ShaderKeywords: FILL_SOLID_COLOR POLYGON_8 _EMISSION
-  m_LightmapFlags: 1
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _BumpScale: 1
-    - _ColorMask: 15
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _Shapes2D_DstAlpha: 1
-    - _Shapes2D_DstBlend: 10
-    - _Shapes2D_SrcAlpha: 1
-    - _Shapes2D_SrcBlend: 1
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UVSec: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1019106314
 GameObject:
   m_ObjectHideFlags: 0
@@ -31136,7 +32228,7 @@ RectTransform:
   m_Children:
   - {fileID: 1285970454}
   m_Father: {fileID: 1749415146}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -37850,6 +38942,91 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549607199}
   m_CullTransparentMesh: 0
+--- !u!21 &1550370906
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shapes2D Material
+  m_Shader: {fileID: 4800000, guid: 44f74e30da9814584b2fdcdbe799e51a, type: 3}
+  m_ShaderKeywords: FILL_SOLID_COLOR RECTANGLE _EMISSION
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BumpScale: 1
+    - _ColorMask: 15
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _Shapes2D_DstAlpha: 1
+    - _Shapes2D_DstBlend: 10
+    - _Shapes2D_SrcAlpha: 1
+    - _Shapes2D_SrcBlend: 1
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1552175919
 GameObject:
   m_ObjectHideFlags: 0
@@ -39195,91 +40372,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1589281229}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &1599107900
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Shapes2D Material
-  m_Shader: {fileID: 4800000, guid: 44f74e30da9814584b2fdcdbe799e51a, type: 3}
-  m_ShaderKeywords: FILL_SOLID_COLOR RECTANGLE _EMISSION
-  m_LightmapFlags: 1
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _BumpScale: 1
-    - _ColorMask: 15
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _Shapes2D_DstAlpha: 1
-    - _Shapes2D_DstBlend: 10
-    - _Shapes2D_SrcAlpha: 1
-    - _Shapes2D_SrcBlend: 1
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UVSec: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1618436883
 GameObject:
   m_ObjectHideFlags: 0
@@ -40106,7 +41198,7 @@ RectTransform:
   - {fileID: 117341455}
   - {fileID: 842310564}
   m_Father: {fileID: 1749415146}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -41131,6 +42223,533 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1702203722}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1707911228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1707911229}
+  - component: {fileID: 1707911230}
+  m_Layer: 5
+  m_Name: otherServers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1707911229
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707911228}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 655470420}
+  - {fileID: 813663553}
+  - {fileID: 1924218322}
+  m_Father: {fileID: 1749415146}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_SizeDelta: {x: 768, y: 0}
+  m_Pivot: {x: 0.99999994, y: 0.5}
+--- !u!114 &1707911230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707911228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 189a50e0ddb1421498ef25dcd885c95b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  takeData:
+  - name: enter
+    frameRate: 30
+    endFramePadding: 0
+    numLoop: 1
+    loopMode: 0
+    loopBackToFrame: 0
+    trackCounter: 4
+    groupCounter: 0
+    rootGroup:
+      group_name: 
+      group_id: 0
+      elements: 020000000300000004000000
+      foldout: 1
+    groupValues: []
+  - name: othersLeave
+    frameRate: 30
+    endFramePadding: 0
+    numLoop: 1
+    loopMode: 0
+    loopBackToFrame: 0
+    trackCounter: 4
+    groupCounter: 0
+    rootGroup:
+      group_name: Group0
+      group_id: 0
+      elements: 0200000003000000
+      foldout: 1
+    groupValues: []
+  - name: sickFocus
+    frameRate: 30
+    endFramePadding: 0
+    numLoop: 1
+    loopMode: 0
+    loopBackToFrame: 0
+    trackCounter: 3
+    groupCounter: 0
+    rootGroup:
+      group_name: Group0
+      group_id: 0
+      elements: 02000000
+      foldout: 1
+    groupValues: []
+  - name: sickLeave
+    frameRate: 30
+    endFramePadding: 0
+    numLoop: 1
+    loopMode: 0
+    loopBackToFrame: 0
+    trackCounter: 4
+    groupCounter: 0
+    rootGroup:
+      group_name: Group0
+      group_id: 0
+      elements: 0200000004000000
+      foldout: 1
+    groupValues: []
+  _defaultTakeName: 
+  _meta: {fileID: 0}
+  sequenceLoadAll: 1
+  sequenceKillWhenDone: 0
+  playOnEnable: 0
+  isGlobal: 0
+  onDisableAction: 3
+  updateType: 0
+  updateTimeIndependent: 0
+  serializeData:
+    _audioTracks: []
+    _audioKeys: []
+    _cameraSwitcherTracks: []
+    _cameraSwitcherKeys: []
+    _eventTracks: []
+    _eventKeys: []
+    _goSetActiveTracks: []
+    _goSetActiveKeys: []
+    _materialTracks: []
+    _materialKeys: []
+    _orientationTracks: []
+    _orientationKeys: []
+    _propertyTracks:
+    - id: 4
+      name: Track2
+      foldout: 1
+      _targetPath: 
+      valueType: 6
+      obj: {fileID: 1924218321}
+      component: {fileID: 1924218323}
+      componentName: Image
+      fieldName: 
+      propertyName: color
+    _propertyKeys:
+    - version: 2
+      interp: 1
+      frame: 1
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      endFrame: 30
+      val: 0
+      valString: 
+      valObj: {fileID: 0}
+      vect4: {x: 1, y: 1, z: 1, w: 1}
+    - version: 2
+      interp: 1
+      frame: 30
+      easeType: 1
+      amplitude: 0
+      period: 0
+      customEase: []
+      endFrame: -1
+      val: 0
+      valString: 
+      valObj: {fileID: 0}
+      vect4: {x: 0.322, y: 0.322, z: 0.322, w: 0}
+    _rotationEulerTracks: []
+    _rotationEulerKeys: []
+    _rotationTracks: []
+    _rotationKeys: []
+    _translationTracks:
+    - id: 2
+      name: Track1
+      foldout: 1
+      _targetPath: 
+      _obj: {fileID: 813663553}
+      pixelSnap: 0
+      pixelPerUnit: 100
+    - id: 3
+      name: Track2
+      foldout: 1
+      _targetPath: 
+      _obj: {fileID: 655470420}
+      pixelSnap: 0
+      pixelPerUnit: 100
+    - id: 4
+      name: Track3
+      foldout: 1
+      _targetPath: 
+      _obj: {fileID: 1924218322}
+      pixelSnap: 0
+      pixelPerUnit: 100
+    - id: 2
+      name: Track1
+      foldout: 1
+      _targetPath: 
+      _obj: {fileID: 813663553}
+      pixelSnap: 0
+      pixelPerUnit: 100
+    - id: 3
+      name: Track2
+      foldout: 1
+      _targetPath: 
+      _obj: {fileID: 655470420}
+      pixelSnap: 0
+      pixelPerUnit: 100
+    - id: 2
+      name: Track1
+      foldout: 1
+      _targetPath: 
+      _obj: {fileID: 1924218322}
+      pixelSnap: 0
+      pixelPerUnit: 100
+    - id: 2
+      name: Track1
+      foldout: 1
+      _targetPath: 
+      _obj: {fileID: 1924218322}
+      pixelSnap: 0
+      pixelPerUnit: 100
+    _translationKeys:
+    - version: 2
+      interp: 0
+      frame: 1
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: 168.8, y: -111, z: 0}
+      endFrame: 15
+      path:
+      - {x: 168.8, y: -111, z: 0}
+      - {x: -324.99994, y: -111, z: 0}
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 15
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: -324.99994, y: -111, z: 0}
+      endFrame: 15
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 5
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: 114.6, y: -111, z: 0}
+      endFrame: 20
+      path:
+      - {x: 114.6, y: -111, z: 0}
+      - {x: -210.99994, y: -111, z: 0}
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 20
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: -210.99994, y: -111, z: 0}
+      endFrame: 20
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 16
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: 144.1, y: -111, z: 0}
+      endFrame: 30
+      path:
+      - {x: 144.1, y: -111, z: 0}
+      - {x: -83.99994, y: -111, z: 0}
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 30
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: -83.99994, y: -111, z: 0}
+      endFrame: 30
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 5
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: -324.99994, y: -111, z: 0}
+      endFrame: 20
+      path:
+      - {x: -324.99994, y: -111, z: 0}
+      - {x: 129.4, y: -111, z: 0}
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 20
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: 129.4, y: -111, z: 0}
+      endFrame: 20
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 1
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: -210.99994, y: -111, z: 0}
+      endFrame: 15
+      path:
+      - {x: -210.99994, y: -111, z: 0}
+      - {x: 151.7, y: -111, z: 0}
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 15
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: 151.7, y: -111, z: 0}
+      endFrame: 15
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 1
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: -83.99994, y: -111, z: 0}
+      endFrame: 10
+      path:
+      - {x: -83.99994, y: -111, z: 0}
+      - {x: -169, y: -111, z: 0}
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 10
+      easeType: 3
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: -169, y: -111, z: 0}
+      endFrame: 10
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 1
+      easeType: 1
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: -169, y: -111, z: 0}
+      endFrame: 30
+      path:
+      - {x: -169, y: -111, z: 0}
+      - {x: -173, y: -111, z: 0}
+      - {x: -165, y: -111, z: 0}
+      - {x: -173, y: -111, z: 0}
+      - {x: -165, y: -111, z: 0}
+      - {x: -173, y: -111, z: 0}
+      - {x: -165, y: -111, z: 0}
+      - {x: -173, y: -111, z: 0}
+      - {x: -165, y: -111, z: 0}
+      - {x: -173, y: -111, z: 0}
+      - {x: -165, y: -111, z: 0}
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 4
+      easeType: 1
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: -173, y: -111, z: 0}
+      endFrame: 4
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 7
+      easeType: 1
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: -165, y: -111, z: 0}
+      endFrame: 7
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 10
+      easeType: 1
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: -173, y: -111, z: 0}
+      endFrame: 10
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 13
+      easeType: 1
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: -165, y: -111, z: 0}
+      endFrame: 13
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 16
+      easeType: 1
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: -173, y: -111, z: 0}
+      endFrame: 16
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 19
+      easeType: 1
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: -165, y: -111, z: 0}
+      endFrame: 19
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 22
+      easeType: 1
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: -173, y: -111, z: 0}
+      endFrame: 22
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 25
+      easeType: 1
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: -165, y: -111, z: 0}
+      endFrame: 25
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 28
+      easeType: 1
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: -173, y: -111, z: 0}
+      endFrame: 28
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 30
+      easeType: 1
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: -165, y: -111, z: 0}
+      endFrame: 30
+      path: []
+      isConstSpeed: 1
+    _unityAnimationTracks: []
+    _unityAnimationKeys: []
+    _scaleTracks: []
+    _scaleKeys: []
+    _trackLookups:
+    - type: 10
+      index: 0
+      keyIndices: 0000000001000000
+    - type: 10
+      index: 1
+      keyIndices: 0200000003000000
+    - type: 10
+      index: 2
+      keyIndices: 0400000005000000
+    - type: 10
+      index: 3
+      keyIndices: 0600000007000000
+    - type: 10
+      index: 4
+      keyIndices: 0800000009000000
+    - type: 10
+      index: 5
+      keyIndices: 0a0000000b000000
+    - type: 10
+      index: 6
+      keyIndices: 0c0000000d0000000e0000000f00000010000000110000001200000013000000140000001500000016000000
+    - type: 7
+      index: 0
+      keyIndices: 0000000001000000
+    _takeTrackCounts: 03000000020000000100000002000000
 --- !u!1 &1719481720
 GameObject:
   m_ObjectHideFlags: 0
@@ -41418,7 +43037,7 @@ RectTransform:
   - {fileID: 1552175920}
   - {fileID: 1327681844}
   m_Father: {fileID: 1749415146}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -48705,6 +50324,79 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+--- !u!1 &1924218321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1924218322}
+  - component: {fileID: 1924218324}
+  - component: {fileID: 1924218323}
+  m_Layer: 5
+  m_Name: otherSick
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1924218322
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924218321}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1707911229}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -84, y: 177}
+  m_SizeDelta: {x: 640, y: 900}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1924218323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924218321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 634bb1046cc160d4d933e15a84eb8421, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1924218324
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924218321}
+  m_CullTransparentMesh: 0
 --- !u!1 &1931243732
 GameObject:
   m_ObjectHideFlags: 0
@@ -50630,91 +52322,6 @@ MonoBehaviour:
   wasConverted: 0
   preConvertedScale: {x: 0, y: 0, z: 0}
 --- !u!21 &2076509478
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Shapes2D Material
-  m_Shader: {fileID: 4800000, guid: 44f74e30da9814584b2fdcdbe799e51a, type: 3}
-  m_ShaderKeywords: FILL_SOLID_COLOR SIMPLE_ELLIPSE _EMISSION
-  m_LightmapFlags: 1
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _BumpScale: 1
-    - _ColorMask: 15
-    - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
-    - _GlossyReflections: 1
-    - _Metallic: 0
-    - _Mode: 0
-    - _OcclusionStrength: 1
-    - _Parallax: 0.02
-    - _Shapes2D_DstAlpha: 1
-    - _Shapes2D_DstBlend: 10
-    - _Shapes2D_SrcAlpha: 1
-    - _Shapes2D_SrcBlend: 1
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
-    - _SrcBlend: 1
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UVSec: 0
-    - _ZWrite: 1
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
---- !u!21 &2077176626
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -53491,6 +55098,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: characterServer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1232663565176693546, guid: 5d30a2e58fdf3f74cb386447509ae43c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1232663565176693549, guid: 5d30a2e58fdf3f74cb386447509ae43c,
         type: 3}
