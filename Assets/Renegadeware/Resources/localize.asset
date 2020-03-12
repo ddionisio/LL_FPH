@@ -41,3 +41,15 @@ MonoBehaviour:
     voiceDuration: 1.5
   - key: thermometer_broken1
     voiceDuration: 1.5
+  - key: thawMethods_fridge_title
+    voiceDuration: 1.5
+  - key: thawMethods_fridge_desc
+    voiceDuration: 8
+  - key: thawMethods_water_title
+    voiceDuration: 2
+  - key: thawMethods_water_desc
+    voiceDuration: 8
+  - key: thawMethods_microwave_title
+    voiceDuration: 1
+  - key: thawMethods_microwave_desc
+    voiceDuration: 8

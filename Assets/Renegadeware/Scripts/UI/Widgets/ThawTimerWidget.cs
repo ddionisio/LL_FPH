@@ -32,6 +32,8 @@ public class ThawTimerWidget : MonoBehaviour {
 
     public M8.Signal signalInvokeFinish;
 
+    public bool isFinished { get; private set; }
+
     private float mTimeScale;
     private float mCurTime;
 
@@ -72,12 +74,15 @@ public class ThawTimerWidget : MonoBehaviour {
             UpdateDisplay();
         }
 
+        isFinished = true;
+
         signalInvokeFinish.Invoke();
     }
 
     private void Init() {
         mTimeScale = 1f;
         mCurTime = 0f;
+        isFinished = false;
 
         UpdateDisplay();
     }
