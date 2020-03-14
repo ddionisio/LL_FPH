@@ -1505,6 +1505,20 @@ MonoBehaviour:
       elements: 02000000
       foldout: 1
     groupValues: []
+  - name: excited
+    frameRate: 30
+    endFramePadding: 30
+    numLoop: -1
+    loopMode: 0
+    loopBackToFrame: 0
+    trackCounter: 10
+    groupCounter: 0
+    rootGroup:
+      group_name: 
+      group_id: 0
+      elements: 02000000
+      foldout: 1
+    groupValues: []
   _defaultTakeName: 
   _meta: {fileID: 0}
   sequenceLoadAll: 1
@@ -1534,6 +1548,13 @@ MonoBehaviour:
     _rotationTracks: []
     _rotationKeys: []
     _translationTracks:
+    - id: 2
+      name: Track1
+      foldout: 1
+      _targetPath: 
+      _obj: {fileID: 175417480106181228}
+      pixelSnap: 0
+      pixelPerUnit: 100
     - id: 2
       name: Track1
       foldout: 1
@@ -1597,6 +1618,78 @@ MonoBehaviour:
       endFrame: 15
       path: []
       isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 1
+      easeType: 4
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: 0, y: -325, z: 0}
+      endFrame: 10
+      path:
+      - {x: 0, y: -325, z: 0}
+      - {x: 0, y: -258.49, z: 0}
+      - {x: 0, y: -325, z: 0}
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 6
+      easeType: 4
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: 0, y: -258.49, z: 0}
+      endFrame: 6
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 2
+      frame: 10
+      easeType: 4
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: 0, y: -325, z: 0}
+      endFrame: 17
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 17
+      easeType: 4
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: 0, y: -325, z: 0}
+      endFrame: 26
+      path:
+      - {x: 0, y: -325, z: 0}
+      - {x: 0, y: -258.49, z: 0}
+      - {x: 0, y: -325, z: 0}
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 22
+      easeType: 4
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: 0, y: -258.49, z: 0}
+      endFrame: 22
+      path: []
+      isConstSpeed: 1
+    - version: 2
+      interp: 0
+      frame: 26
+      easeType: 4
+      amplitude: 0
+      period: 0
+      customEase: []
+      position: {x: 0, y: -325, z: 0}
+      endFrame: 26
+      path: []
+      isConstSpeed: 1
     _unityAnimationTracks: []
     _unityAnimationKeys: []
     _scaleTracks: []
@@ -1608,7 +1701,10 @@ MonoBehaviour:
     - type: 10
       index: 1
       keyIndices: 0200000003000000
-    _takeTrackCounts: 0100000001000000
+    - type: 10
+      index: 2
+      keyIndices: 040000000500000006000000070000000800000009000000
+    _takeTrackCounts: 010000000100000001000000
 --- !u!1 &1232663565179602299
 GameObject:
   m_ObjectHideFlags: 0

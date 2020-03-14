@@ -19172,9 +19172,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e1430f5308a0ca41b53dc1a929bec96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  takeOpen: 
-  takeClose: 
+  animator: {fileID: 4766945655088112926}
+  takeOpen: enter
+  takeClose: exit
 --- !u!114 &4766945655088112926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25590,6 +25590,7 @@ GameObject:
   - component: {fileID: 4080785889227399008}
   - component: {fileID: 8812297926795979919}
   - component: {fileID: 1501479767550242726}
+  - component: {fileID: 5002587156865974697}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -25638,7 +25639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0.69411767, b: 0.454902, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -25673,6 +25674,20 @@ MonoBehaviour:
   _brightness: 1
   _alpha: 1
   _target: {fileID: 8812297926795979919}
+--- !u!114 &5002587156865974697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7568046131232150701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053a561a000d402489b891a0bd9385de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: close
+  isKeyExclusive: 0
 --- !u!1 &7654913901348954098
 GameObject:
   m_ObjectHideFlags: 0

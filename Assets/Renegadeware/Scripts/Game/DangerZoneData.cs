@@ -23,5 +23,7 @@ namespace Renegadeware {
         public ItemData[] items;
 
         public int scorePerItem;
+
+        public int scoreMax { get { return items.Length * scorePerItem; } }
     }
 }

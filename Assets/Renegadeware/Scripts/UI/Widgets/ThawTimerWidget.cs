@@ -3,105 +3,107 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ThawTimerWidget : MonoBehaviour {
-    [System.Serializable]
-    public class MaterialData {
-        public Material material;
-        public string colorVarName;
-        public Color colorStart;
-        public Color colorEnd;
+namespace Renegadeware {
+    public class ThawTimerWidget : MonoBehaviour {
+        [System.Serializable]
+        public class MaterialData {
+            public Material material;
+            public string colorVarName;
+            public Color colorStart;
+            public Color colorEnd;
 
-        public void Apply(float t) {
-            material.SetColor(colorVarName, Color.Lerp(colorStart, colorEnd, t));
+            public void Apply(float t) {
+                material.SetColor(colorVarName, Color.Lerp(colorStart, colorEnd, t));
+            }
         }
-    }
 
-    [Header("Data")]
-    public float delay;
+        [Header("Data")]
+        public float delay;
 
-    [Header("Display")]
-    public Text timeLabel;
-    public Image fillImage;
+        [Header("Display")]
+        public Text timeLabel;
+        public Image fillImage;
 
-    [Header("Materials")]
-    public MaterialData[] materials;
-        
-    [Header("Signals")]
-    public M8.Signal signalListenStart;
-    public M8.SignalFloat signalListenChangeScale;
+        [Header("Materials")]
+        public MaterialData[] materials;
 
-    public M8.Signal signalInvokeFinish;
+        [Header("Signals")]
+        public M8.Signal signalListenStart;
+        public M8.SignalFloat signalListenChangeScale;
 
-    public bool isFinished { get; private set; }
+        public M8.Signal signalInvokeFinish;
 
-    private float mTimeScale;
-    private float mCurTime;
+        public bool isFinished { get; private set; }
 
-    void OnEnable() {
-        Init();
-    }
+        private float mTimeScale;
+        private float mCurTime;
 
-    void Awake() {
-        signalListenStart.callback += OnSignalStart;
-        signalListenChangeScale.callback += OnSignalChangeScale;
-    }
+        void OnEnable() {
+            Init();
+        }
 
-    void OnDestroy() {
-        signalListenStart.callback -= OnSignalStart;
-        signalListenChangeScale.callback -= OnSignalChangeScale;
-    }
+        void Awake() {
+            signalListenStart.callback += OnSignalStart;
+            signalListenChangeScale.callback += OnSignalChangeScale;
+        }
 
-    void OnSignalStart() {
-        StopAllCoroutines();
+        void OnDestroy() {
+            signalListenStart.callback -= OnSignalStart;
+            signalListenChangeScale.callback -= OnSignalChangeScale;
+        }
 
-        Init();
+        void OnSignalStart() {
+            StopAllCoroutines();
 
-        StartCoroutine(DoUpdate());
-    }
+            Init();
 
-    void OnSignalChangeScale(float s) {
-        mTimeScale = s;
-    }
+            StartCoroutine(DoUpdate());
+        }
 
-    IEnumerator DoUpdate() {
-        while(mCurTime < delay) {
-            yield return null;
+        void OnSignalChangeScale(float s) {
+            mTimeScale = s;
+        }
 
-            mCurTime += Time.deltaTime * mTimeScale;
-            if(mCurTime > delay)
-                mCurTime = delay;
+        IEnumerator DoUpdate() {
+            while(mCurTime < delay) {
+                yield return null;
+
+                mCurTime += Time.deltaTime * mTimeScale;
+                if(mCurTime > delay)
+                    mCurTime = delay;
+
+                UpdateDisplay();
+            }
+
+            isFinished = true;
+
+            signalInvokeFinish.Invoke();
+        }
+
+        private void Init() {
+            mTimeScale = 1f;
+            mCurTime = 0f;
+            isFinished = false;
 
             UpdateDisplay();
         }
 
-        isFinished = true;
+        private void UpdateDisplay() {
+            int seconds = Mathf.FloorToInt(mCurTime);
+            int minutes = seconds / 60;
+            int hours = minutes / 60;
 
-        signalInvokeFinish.Invoke();
-    }
+            seconds %= 60;
+            minutes %= 60;
 
-    private void Init() {
-        mTimeScale = 1f;
-        mCurTime = 0f;
-        isFinished = false;
+            timeLabel.text = string.Format("{0}:{1:00}:{2:00}", hours, minutes, seconds);
 
-        UpdateDisplay();
-    }
+            var t = Mathf.Clamp01(mCurTime / delay);
 
-    private void UpdateDisplay() {
-        int seconds = Mathf.FloorToInt(mCurTime);
-        int minutes = seconds / 60;
-        int hours = minutes / 60;
+            fillImage.fillAmount = Mathf.Clamp01(1f - t);
 
-        seconds %= 60;
-        minutes %= 60;
-
-        timeLabel.text = string.Format("{0}:{1:00}:{2:00}", hours, minutes, seconds);
-
-        var t = Mathf.Clamp01(mCurTime / delay);
-
-        fillImage.fillAmount = Mathf.Clamp01(1f - t);
-
-        for(int i = 0; i < materials.Length; i++)
-            materials[i].Apply(t);
+            for(int i = 0; i < materials.Length; i++)
+                materials[i].Apply(t);
+        }
     }
 }

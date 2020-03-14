@@ -41,6 +41,14 @@ MonoBehaviour:
     voiceDuration: 1.5
   - key: thermometer_broken1
     voiceDuration: 1.5
+  - key: sanitaryInteract
+    voiceDuration: 6
+  - key: sanitaryInteract0
+    voiceDuration: 5
+  - key: sanitaryInteract1
+    voiceDuration: 5
+  - key: sanitaryInteract2
+    voiceDuration: 5
   - key: thawMethods_fridge_title
     voiceDuration: 1.5
   - key: thawMethods_fridge_desc

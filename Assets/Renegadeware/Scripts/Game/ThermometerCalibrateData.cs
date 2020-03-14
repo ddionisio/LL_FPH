@@ -11,6 +11,8 @@ namespace Renegadeware {
 
         public float targetDegree;
 
+        public int scoreMax { get { return (scorePerAdjust * adjustCount) + scoreBroken; } }
+
         public static string GetDegreeString(float degree) {
             return Mathf.FloorToInt(degree).ToString() + "° F";
         }
