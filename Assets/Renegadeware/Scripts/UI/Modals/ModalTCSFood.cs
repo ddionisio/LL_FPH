@@ -32,6 +32,12 @@ namespace Renegadeware {
         [Header("Drag Guide")]
         public LoLExt.DragToGuideWidget dragGuide;
 
+        [Header("Sound")]
+        [M8.SoundPlaylist]
+        public string sfxResultItem;
+        [M8.SoundPlaylist]
+        public string sfxResult;
+
         public LoLExt.AnimatorEnterExit nextTransition;
 
         private M8.CacheList<TCSFoodItemWidget> mFoodItemActives;
@@ -187,6 +193,9 @@ namespace Renegadeware {
                 else
                     itm.wrongGO.SetActive(true);
 
+                if(!string.IsNullOrEmpty(sfxResultItem))
+                    M8.SoundPlaylist.instance.Play(sfxResultItem, false);
+
                 yield return waitDelay;
             }
 
@@ -204,6 +213,9 @@ namespace Renegadeware {
             }
 
             //show result
+            if(!string.IsNullOrEmpty(sfxResult))
+                M8.SoundPlaylist.instance.Play(sfxResult, false);
+
             resultTransition.gameObject.SetActive(true);
             yield return resultTransition.PlayEnterWait();
 

@@ -15,6 +15,12 @@ namespace Renegadeware {
         public DG.Tweening.Ease dragDropEase = DG.Tweening.Ease.OutSine;
         public float dragDropSpeed = 1000f; //speed moving from current position to new position after dropping
 
+        [Header("Sound")]
+        [M8.SoundPlaylist]
+        public string sfxDragBegin;
+        [M8.SoundPlaylist]
+        public string sfxDragDrop;
+
         public bool inputEnabled {
             get { return mInputEnabled && mDropMoveRout == null; }
             set {
@@ -89,6 +95,9 @@ namespace Renegadeware {
             if(!inputEnabled)
                 return;
 
+            if(!string.IsNullOrEmpty(sfxDragBegin))
+                M8.SoundPlaylist.instance.Play(sfxDragBegin, false);
+
             isDragging = true;
 
             dragRoot.SetParent(dragArea, true);
@@ -140,6 +149,9 @@ namespace Renegadeware {
                 var otherFoodItemWidget = pointerGO.GetComponent<TCSFoodItemWidget>();
                 if(otherFoodItemWidget) {
                     if(otherFoodItemWidget != this) {
+                        if(!string.IsNullOrEmpty(sfxDragDrop))
+                            M8.SoundPlaylist.instance.Play(sfxDragDrop, false);
+
                         var siblingIndex = transform.GetSiblingIndex();
                         var otherSiblingIndex = otherFoodItemWidget.transform.GetSiblingIndex();
 
@@ -154,8 +166,12 @@ namespace Renegadeware {
                 }
                 else if(transform.parent != pointerGO.transform) { //drop area?
                     var dropArea = GetDropAreaWidget(pointerGO);
-                    if(dropArea && !dropArea.isFull)
+                    if(dropArea && !dropArea.isFull) {
+                        if(!string.IsNullOrEmpty(sfxDragDrop))
+                            M8.SoundPlaylist.instance.Play(sfxDragDrop, false);
+
                         transform.SetParent(pointerGO.transform, false);
+                    }
                 }
             }
 

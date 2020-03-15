@@ -17,6 +17,38 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 9d18778d72ce9114e9bd29337e518944, type: 3}
     clipVariants: []
     spatialBlend: 0
+  - name: correct
+    clip: {fileID: 8300000, guid: 331413503a37d074c817dee0eddf097b, type: 3}
+    clipVariants: []
+    spatialBlend: 0
+  - name: paletteOpen
+    clip: {fileID: 8300000, guid: cee3068c00ec3594c83229541fa8b4db, type: 3}
+    clipVariants: []
+    spatialBlend: 0
+  - name: tap
+    clip: {fileID: 8300000, guid: 28b2df0ab3d233548886ec1e1e4d44ee, type: 3}
+    clipVariants: []
+    spatialBlend: 0
+  - name: wrong
+    clip: {fileID: 8300000, guid: 1e1b18f65e30e0445bdd276ff4a23f88, type: 3}
+    clipVariants: []
+    spatialBlend: 0
+  - name: boop
+    clip: {fileID: 0}
+    clipVariants:
+    - {fileID: 8300000, guid: 3f33f2c107cb5b54faa5cc821ba7f71b, type: 3}
+    - {fileID: 8300000, guid: bd7a3140c005c9048bbebe6519eb7d45, type: 3}
+    - {fileID: 8300000, guid: 358a5089757a692449f3849b054b8e0c, type: 3}
+    - {fileID: 8300000, guid: 0a0e6a27f0058f843a5c6b091f4f2c38, type: 3}
+    spatialBlend: 0
+  - name: waterTapRunning
+    clip: {fileID: 8300000, guid: 0803648752de97b41b8ff1a9ac7ff3ff, type: 3}
+    clipVariants:
+    - {fileID: 8300000, guid: 3f33f2c107cb5b54faa5cc821ba7f71b, type: 3}
+    - {fileID: 8300000, guid: bd7a3140c005c9048bbebe6519eb7d45, type: 3}
+    - {fileID: 8300000, guid: 358a5089757a692449f3849b054b8e0c, type: 3}
+    - {fileID: 8300000, guid: 0a0e6a27f0058f843a5c6b091f4f2c38, type: 3}
+    spatialBlend: 0
   max: 32
   audioMixer: {fileID: 0}
   muteOnFocusLost: 1

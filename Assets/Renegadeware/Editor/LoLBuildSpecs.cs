@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using System.Reflection;
-using SimpleJSON;
+using LoL.SimpleJSON;
 
 namespace LoL.Editor
 {
@@ -89,6 +89,7 @@ namespace LoL.Editor
             specs["productName"] = Application.productName;
             specs["version"] = Application.version;
             specs["unityVersion"] = Application.unityVersion;
+            specs["sdkVersion"] = 4.0f;
 
             // Get the webgl settings.
             specs["webglSettings"] = GetStaticPropertiesToJson(typeof(PlayerSettings.WebGL));

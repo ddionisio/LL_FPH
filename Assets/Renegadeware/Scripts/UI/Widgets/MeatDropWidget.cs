@@ -13,6 +13,12 @@ namespace Renegadeware {
 
         public M8.Signal signalInvokeDragEnd;
 
+        [Header("Sound")]
+        [M8.SoundPlaylist]
+        public string sfxDragBegin;
+        [M8.SoundPlaylist]
+        public string sfxDragDrop;
+
         private bool mIsDragging;
         private LoLExt.DragToGuideWidget mDragGuide;
 
@@ -43,6 +49,9 @@ namespace Renegadeware {
         }
 
         void IBeginDragHandler.OnBeginDrag(PointerEventData eventData) {
+            if(!string.IsNullOrEmpty(sfxDragBegin))
+                M8.SoundPlaylist.instance.Play(sfxDragBegin, false);
+
             dragRoot.gameObject.SetActive(true);
 
             mIsDragging = true;
@@ -60,6 +69,9 @@ namespace Renegadeware {
                 return;
 
             if(eventData.pointerCurrentRaycast.isValid && eventData.pointerCurrentRaycast.gameObject == dragToArea.gameObject) {
+                if(!string.IsNullOrEmpty(sfxDragDrop))
+                    M8.SoundPlaylist.instance.Play(sfxDragDrop, false);
+
                 if(signalInvokeDragEnd)
                     signalInvokeDragEnd.Invoke();
 

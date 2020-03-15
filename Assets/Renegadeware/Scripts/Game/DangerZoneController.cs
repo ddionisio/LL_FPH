@@ -30,6 +30,12 @@ namespace Renegadeware {
 
         public M8.Signal signalInvokeComplete;
 
+        [Header("Sound")]
+        [M8.SoundPlaylist]
+        public string sfxCorrect;
+        [M8.SoundPlaylist]
+        public string sfxWrong;
+
         private int mChoiceIndex;
         private bool mChoiceIsNext;
 
@@ -106,6 +112,9 @@ namespace Renegadeware {
 
                 //show score, update score
                 if(isCorrect) {
+                    if(!string.IsNullOrEmpty(sfxCorrect))
+                        M8.SoundPlaylist.instance.Play(sfxCorrect, false);
+
                     scoreCounter.SetCountImmediate(0);
 
                     yield return scoreTransition.PlayEnterWait();
@@ -113,6 +122,10 @@ namespace Renegadeware {
                     scoreCounter.count = data.scorePerItem;
 
                     LoLExt.LoLManager.instance.curScore += data.scorePerItem;
+                }
+                else {
+                    if(!string.IsNullOrEmpty(sfxWrong))
+                        M8.SoundPlaylist.instance.Play(sfxWrong, false);
                 }
 
                 //wait for next
