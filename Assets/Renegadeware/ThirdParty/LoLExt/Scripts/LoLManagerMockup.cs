@@ -9,6 +9,8 @@ namespace LoLExt {
         [Header("Mockup")]
         public TextAsset localizeText;
 
+        public override bool isAutoSpeechEnabled { get { return false; } }
+
         protected override void _SpeakText(string key) {
 
         }

@@ -111,6 +111,8 @@ namespace LoLExt {
             }
         }
 
+        public virtual bool isAutoSpeechEnabled { get { return true; } }
+
         public List<QuestionAnswered> questionAnsweredList {
             get { return mQuestionsAnsweredList; }
         }
@@ -352,10 +354,10 @@ namespace LoLExt {
             Application.runInBackground = false;
 
             // Create the WebGL (or mock) object
-#if UNITY_EDITOR || UNITY_ANDROID
+#if UNITY_WEBGL
+		    ILOLSDK webGL = new LoLSDK.WebGL();
+#else
             ILOLSDK webGL = new LoLSDK.MockWebGL();
-#elif UNITY_WEBGL
-		ILOLSDK webGL = new LoLSDK.WebGL();
 #endif
 
             // Initialize the object, passing in the WebGL

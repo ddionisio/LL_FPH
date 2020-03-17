@@ -1,5 +1,3 @@
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
 Shader "Shapes2D/Shape" {
 	Properties {
         // this is to make SpriteRenderer happy

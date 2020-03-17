@@ -1,5 +1,9 @@
+v1.13 - Submitted June 6, 2019
+- Fixes for canvases using ScreenSpaceCamera
+
+
 v1.12 - Submitted Nov 25, 2017
-- Polygon and Path shape types now have a button to read their points from a PolygonCollider2D 
+- Polygon and Path shape types have a button to read their points from a PolygonCollider2D 
   (points outside the shape's bounding rect will be clamped, though)
 - Polygon shape type now has a button to create a PolygonCollider2D
 - Arrow polygon preset now points to the right
