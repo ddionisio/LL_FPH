@@ -36,11 +36,11 @@ sysinfo.txt
 *.unitypackage
 
 # Third-Party plugins
-PlayMaker/
-PlayMaker.meta
+#PlayMaker/
+#PlayMaker.meta
 
-tripolygon/
-tripolygon.meta
+#tripolygon/
+#tripolygon.meta
 
 # Mate Specifics
 # /Common/*.png.meta
