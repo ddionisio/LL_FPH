@@ -209,6 +209,9 @@ namespace Renegadeware {
                 else
                     itm.wrongGO.SetActive(true);
 
+                if(!string.IsNullOrEmpty(sfxResultItem))
+                    M8.SoundPlaylist.instance.Play(sfxResultItem, false);
+
                 yield return waitDelay;
             }
 
