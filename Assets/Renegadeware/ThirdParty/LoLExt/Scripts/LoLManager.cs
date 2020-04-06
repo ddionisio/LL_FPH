@@ -354,8 +354,10 @@ namespace LoLExt {
             Application.runInBackground = false;
 
             // Create the WebGL (or mock) object
-#if UNITY_WEBGL
-		    ILOLSDK webGL = new LoLSDK.WebGL();
+#if UNITY_EDITOR
+            ILOLSDK webGL = new LoLSDK.MockWebGL();
+#elif UNITY_WEBGL
+            ILOLSDK webGL = new LoLSDK.WebGL();
 #else
             ILOLSDK webGL = new LoLSDK.MockWebGL();
 #endif

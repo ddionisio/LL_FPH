@@ -5,7 +5,7 @@ using UnityEngine;
 namespace LoLExt {
     public class LoLSceneAutoLoad : MonoBehaviour {
         [SerializeField]
-        string _scene;
+        string _scene = "";
 
         [SerializeField]
         float _delay = 0f;
