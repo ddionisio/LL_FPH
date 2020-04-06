@@ -17,6 +17,7 @@ namespace LoLExt {
         public Text label;
         public GameObject selectGO;
         public GameObject selectedGO;
+        public GameObject selectedPostGO;
         public GameObject correctGO;
         public GameObject wrongGO;
 
@@ -65,6 +66,7 @@ namespace LoLExt {
             if(selectGO) selectGO.SetActive(true);
             if(correctGO) correctGO.SetActive(false);
             if(wrongGO) wrongGO.SetActive(false);
+            if(selectedPostGO) selectedPostGO.SetActive(false);
         }
         
         void IPointerClickHandler.OnPointerClick(PointerEventData eventData) {

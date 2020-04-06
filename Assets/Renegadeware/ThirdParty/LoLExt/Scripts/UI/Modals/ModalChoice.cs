@@ -12,6 +12,7 @@ namespace LoLExt {
         public const string parmChoices = "c"; //array of ModalChoiceItemInfo
         public const string parmStartSelect = "i";
         public const string parmShuffle = "s";
+        public const string parmDisplayPostSelected = "ps"; //bool, if true, display post selected after choosing an item
         public const string parmNextCallback = "n";
 
         [Header("Display")]        
@@ -36,6 +37,7 @@ namespace LoLExt {
 
         private ModalChoiceItem mCurChoiceItem;
         private System.Action<int> mNextCallback;
+        private bool mIsDisplayPostSelected;
 
         public void ShowCorrectChoice(int correctIndex, bool enableConfirm) {
             //go through and show correct/wrong choices
@@ -137,6 +139,8 @@ namespace LoLExt {
 
             parms.TryGetValue(parmShuffle, out shuffle);
 
+            parms.TryGetValue(parmDisplayPostSelected, out mIsDisplayPostSelected);
+
             startIndex = parms.ContainsKey(parmStartSelect) ? parms.GetValue<int>(parmStartSelect) : -1;
 
             //setup display
@@ -208,8 +212,12 @@ namespace LoLExt {
             if(confirmButton)
                 confirmButton.interactable = false;
 
-            if(mCurChoiceItem)
+            if(mCurChoiceItem) {
+                if(mIsDisplayPostSelected && mCurChoiceItem.selectedPostGO)
+                    mCurChoiceItem.selectedPostGO.SetActive(true);
+
                 mNextCallback?.Invoke(mCurChoiceItem.index);
+            }
         }
 
         private void GenerateChoices(ModalChoiceItemInfo[] infos, int startIndex, bool shuffle) {

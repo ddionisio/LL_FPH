@@ -93,6 +93,7 @@ namespace Renegadeware {
                 mParms[LoLExt.ModalChoice.parmStartSelect] = -1;
                 mParms[LoLExt.ModalChoice.parmNextCallback] = (System.Action<int>)OnModalChoiceNext;
                 mParms[LoLExt.ModalChoice.parmShuffle] = true;
+                mParms[LoLExt.ModalChoice.parmDisplayPostSelected] = true;
 
                 modalMgr.Open(choiceModalRef, mParms);
 
