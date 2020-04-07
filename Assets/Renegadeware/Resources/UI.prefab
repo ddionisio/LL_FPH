@@ -18751,7 +18751,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -3, y: 0}
-  m_SizeDelta: {x: -6, y: 4}
+  m_SizeDelta: {x: -6, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2665730239380011367
 GameObject:
@@ -23337,7 +23337,7 @@ MonoBehaviour:
       endFrame: 10
       path:
       - {x: -24, y: 70, z: 0}
-      - {x: -24, y: -26, z: 0}
+      - {x: -24, y: -18, z: 0}
       isConstSpeed: 1
     - version: 2
       interp: 0
@@ -23346,7 +23346,7 @@ MonoBehaviour:
       amplitude: 0
       period: 0
       customEase: []
-      position: {x: -24, y: -26, z: 0}
+      position: {x: -24, y: -18, z: 0}
       endFrame: 10
       path: []
       isConstSpeed: 1
@@ -23357,10 +23357,10 @@ MonoBehaviour:
       amplitude: 0
       period: 0
       customEase: []
-      position: {x: -24, y: -26, z: 0}
+      position: {x: -24, y: -18, z: 0}
       endFrame: 10
       path:
-      - {x: -24, y: -26, z: 0}
+      - {x: -24, y: -18, z: 0}
       - {x: -24, y: 70, z: 0}
       isConstSpeed: 1
     - version: 2
@@ -24031,7 +24031,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -24, y: -26}
+  m_AnchoredPosition: {x: -24, y: -18}
   m_SizeDelta: {x: 100, y: 44}
   m_Pivot: {x: 0.9999999, y: 1.0000001}
 --- !u!1 &6517899212362647291

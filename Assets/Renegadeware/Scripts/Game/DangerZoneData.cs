@@ -18,6 +18,9 @@ namespace Renegadeware {
             public int correctIndex;
 
             public int tempDegree;
+
+            [M8.Localize]
+            public string resultDescRef;
         }
 
         public ItemData[] items;

@@ -21,6 +21,10 @@ namespace Renegadeware {
         public Text illustrationLabel;
         public LoLExt.AnimatorEnterExit illustrationTransition;
 
+        [Header("Result Description")]
+        public LoLExt.AnimatorEnterExit resultDescTransition;
+        public Text resultDescText;
+
         [Header("Score")]
         public M8.UI.Texts.TextCounter scoreCounter;
         public LoLExt.AnimatorEnterExit scoreTransition;
@@ -129,6 +133,10 @@ namespace Renegadeware {
                         M8.SoundPlaylist.instance.Play(sfxWrong, false);
                 }
 
+                //show result description
+                resultDescText.text = M8.Localize.Get(itm.resultDescRef);
+                resultDescTransition.PlayEnter();
+
                 //wait for next
                 while(!mChoiceIsNext)
                     yield return null;
@@ -140,6 +148,8 @@ namespace Renegadeware {
                     scoreTransition.PlayExit();
 
                 illustrationTransition.PlayExit();
+
+                resultDescTransition.PlayExit();
 
                 modalMgr.CloseUpTo(choiceModalRef, true);
 
