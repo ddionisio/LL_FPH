@@ -60,6 +60,10 @@ namespace Renegadeware {
 
         private float mMoveStartTime;
 
+        private bool mAdjustBusy;
+        private float mAdjustLastTime;
+        private float mAdjustDegree;
+
         public void ApplyDegree(float degree, bool instant) {
             mPrevDegree = mCurDegree;
 
@@ -75,23 +79,37 @@ namespace Renegadeware {
         }
 
         public void AdjustLeft() {
-            if(mIsBroken)
+            if(mAdjustBusy)
+                return;
+
+            mAdjustBusy = true;
+            mAdjustLastTime = Time.time;
+            mAdjustDegree = mMoveToDegree - thermometerAdjustIncrement;
+
+            /*if(mIsBroken)
                 M8.SoundPlaylist.instance.Play(interactAdjustErrorSound, false);
             else {
                 M8.SoundPlaylist.instance.Play(interactAdjustClickSound, false);
             }
 
-            ApplyDegree(mMoveToDegree - thermometerAdjustIncrement, true);
+            ApplyDegree(mMoveToDegree - thermometerAdjustIncrement, true);*/
         }
 
         public void AdjustRight() {
-            if(mIsBroken)
+            if(mAdjustBusy)
+                return;
+
+            mAdjustBusy = true;
+            mAdjustLastTime = Time.time;
+            mAdjustDegree = mMoveToDegree + thermometerAdjustIncrement;
+
+            /*if(mIsBroken)
                 M8.SoundPlaylist.instance.Play(interactAdjustErrorSound, false);
             else {
                 M8.SoundPlaylist.instance.Play(interactAdjustClickSound, false);
             }
 
-            ApplyDegree(mMoveToDegree + thermometerAdjustIncrement, true);
+            ApplyDegree(mMoveToDegree + thermometerAdjustIncrement, true);*/
         }
 
         public void Confirm() {
@@ -109,6 +127,8 @@ namespace Renegadeware {
             if(signalListenSetBroken) signalListenSetBroken.callback += OnSetBroken;
 
             mMoveEaseFunc = DG.Tweening.Core.Easing.EaseManager.ToEaseFunction(DG.Tweening.Ease.InOutSine);
+
+            mAdjustBusy = false;
         }
 
         void OnDisable() {
@@ -119,6 +139,16 @@ namespace Renegadeware {
         }
 
         void Update() {
+            if(mAdjustBusy) {
+                if(Time.time - mAdjustLastTime >= 0.1f) {
+                    M8.SoundPlaylist.instance.Play(mIsBroken ? interactAdjustErrorSound : interactAdjustClickSound, false);
+
+                    ApplyDegree(mAdjustDegree, true);
+
+                    mAdjustBusy = false;
+                }
+            }
+
             if(mCurDegree != mMoveToDegree) {
                 var time = Time.time - mMoveStartTime;
                 if(time < thermometerMoveDelay) {

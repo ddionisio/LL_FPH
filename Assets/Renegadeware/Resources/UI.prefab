@@ -9845,7 +9845,7 @@ MonoBehaviour:
   portraitResize: 0
   nameLabel: {fileID: 0}
   textLabel: {fileID: 1150539028}
-  textCharPerSecond: 0.05
+  textCharPerSecond: 0.02
   textProcessActiveGO: {fileID: 0}
   textProcessFinishGO: {fileID: 487215734}
   nextDelay: 0.3
