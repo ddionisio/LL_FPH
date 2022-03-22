@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Renegadeware/Scenes/_Init.unity
     guid: b4d491c4c2f89864eafc66b14af2bc46
-  - enabled: 0
+  - enabled: 1
     path: Assets/Renegadeware/Scenes/_InitMobile.unity
     guid: ec593ee7f8e968b4ab8343bddb3bf2d3
   - enabled: 1
